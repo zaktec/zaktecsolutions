@@ -1,4 +1,4 @@
-# GenAI Startup Astro Theme - Development TODO
+# ZakTecSolutions Website - Development TODO
 
 ## 📦 Package Updates & Configuration
 - [x] Update all packages to latest versions
@@ -11,7 +11,7 @@
 - [x] Dark mode CSS variables already configured
 - [x] Create theme toggle component (light/dark)
 - [x] Add theme persistence (localStorage)
-- [x] Update color scheme for genAI branding
+- [x] Update color scheme for ZakTecSolutions branding
 - [x] Add gradient backgrounds and effects
 
 ## 🧩 Core Components (from reactbits.dev)
@@ -76,7 +76,7 @@
 - [ ] Optimize images and assets
 - [ ] Test GitHub Pages deployment
 
-## 🎯 GenAI Branding
+## 🎯 ZakTecSolutions Branding
 - [x] AI-focused copy and messaging
 - [x] Tech stack badges/logos
 - [ ] Integration examples (future enhancement)

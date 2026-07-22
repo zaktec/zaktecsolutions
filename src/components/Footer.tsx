@@ -17,7 +17,7 @@ export function Footer() {
                 <Sparkles className="h-5 w-5 text-white" />
               </div>
               <span className="font-bold text-xl bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-                GenAI
+                ZakTecSolutions
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -152,7 +152,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} GenAI. All rights reserved.
+            © {currentYear} ZakTecSolutions. All rights reserved.
           </p>
           <div className="flex gap-6">
             <a

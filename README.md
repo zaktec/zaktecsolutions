@@ -1,10 +1,10 @@
-# 🚀 GenAI Startup Astro Theme
+# ZakTecSolutions
 
-A modern, beautiful, and **completely free** Astro theme template designed specifically for GenAI and AI-focused startups. Features a stunning dark/light mode toggle, smooth animations, and ready-to-deploy components.
+The official ZakTecSolutions website, built with Astro, React, and Tailwind CSS.
 
-![GenAI Theme](https://img.shields.io/badge/Astro-5.16-blueviolet) ![License](https://img.shields.io/badge/license-MIT-green) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
+![ZakTecSolutions](https://img.shields.io/badge/Astro-7.1.3-blueviolet) ![License](https://img.shields.io/badge/license-MIT-green) ![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
 
-<img width="3809" height="2327" alt="Screenshot of GenAI Startup Homepage" src="https://github.com/user-attachments/assets/b086ecf1-1f3a-495c-927e-f940b88fc757" />
+<img width="3809" height="2327" alt="Screenshot of the ZakTecSolutions homepage" src="https://github.com/user-attachments/assets/b086ecf1-1f3a-495c-927e-f940b88fc757" />
 
 ## ✨ Features
 
@@ -40,8 +40,8 @@ A modern, beautiful, and **completely free** Astro theme template designed speci
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/astro-genai-startup-theme.git
-cd astro-genai-startup-theme
+git clone https://github.com/zaktec/zaktecsolutions.git
+cd zaktecsolutions
 ```
 
 ### 2. Install dependencies
@@ -111,10 +111,7 @@ Update the content in the component files:
 
 ### Branding
 
-Replace the logo and brand name in:
-- `src/components/Header.tsx`
-- `src/components/Footer.tsx`
-- `src/layouts/main.astro` (page title)
+See `Brand.md` for the official site name, capitalization, and usage rules.
 
 ## 🚀 Deploy to GitHub Pages
 
@@ -211,7 +208,7 @@ npm run astro        # Run Astro CLI commands
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/astro-genai-startup-theme/issues).
+Contributions, issues, and feature requests are welcome! See the [issues page](https://github.com/zaktec/zaktecsolutions/issues).
 
 ## 📄 License
 
@@ -223,7 +220,7 @@ Copyright (c) 2025
 
 - Inspired by modern SaaS landing pages
 - Components inspired by [reactbits.dev](https://reactbits.dev)
-- Built with love for the GenAI community
+- Built by ZakTecSolutions
 
 ## 💖 Support
 
@@ -234,4 +231,4 @@ If you find this template useful, please consider:
 
 ---
 
-**Built with ❤️ for the GenAI community**
+**Built by ZakTecSolutions**
