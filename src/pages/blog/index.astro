@@ -101,7 +101,7 @@ const categories = ["All", "Tutorial", "Industry", "Engineering", "Research", "S
 							<div class="p-6">
 								<div class="flex items-center gap-4 text-sm text-muted-foreground mb-3">
 									<span class="inline-flex items-center gap-1">
-										<Calendar class="h-4 w-4" />
+										<Calendar className="h-4 w-4" />
 										{new Date(post.date).toLocaleDateString('en-US', {
 											month: 'short',
 											day: 'numeric',
@@ -109,7 +109,7 @@ const categories = ["All", "Tutorial", "Industry", "Engineering", "Research", "S
 										})}
 									</span>
 									<span class="inline-flex items-center gap-1">
-										<Clock class="h-4 w-4" />
+										<Clock className="h-4 w-4" />
 										{post.readTime}
 									</span>
 								</div>
@@ -124,7 +124,7 @@ const categories = ["All", "Tutorial", "Industry", "Engineering", "Research", "S
 								</p>
 								<span class="inline-flex items-center gap-2 text-sm font-medium text-primary group-hover:gap-3 transition-all">
 									Read more
-									<ArrowRight class="h-4 w-4" />
+									<ArrowRight className="h-4 w-4" />
 								</span>
 							</div>
 						</a>

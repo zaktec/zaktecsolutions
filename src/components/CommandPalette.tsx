@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Search, Home, FileText, Mail, Settings, Sun, Moon, Command } from "lucide-react";
+import { Search, Home, FileText, Mail, Settings, Sun, Command } from "lucide-react";
 import { withBase } from "@/lib/utils";
 
 interface CommandItem {
@@ -189,7 +189,7 @@ export function CommandPalette() {
                   {category}
                 </div>
                 <div className="space-y-1">
-                  {items.map((cmd, index) => {
+                  {items.map((cmd) => {
                     const globalIndex = filteredCommands.indexOf(cmd);
                     const Icon = cmd.icon;
                     return (

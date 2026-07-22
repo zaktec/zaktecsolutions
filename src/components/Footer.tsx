@@ -1,4 +1,5 @@
-import { Sparkles, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Sparkles, Mail } from "lucide-react";
+import { GitHubLogoIcon, LinkedInLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
 import { withBase } from "@/lib/utils";
 
@@ -30,7 +31,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Github className="h-5 w-5" />
+                <GitHubLogoIcon className="h-5 w-5" />
               </a>
               <a
                 href="https://twitter.com"
@@ -38,7 +39,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Twitter className="h-5 w-5" />
+                <TwitterLogoIcon className="h-5 w-5" />
               </a>
               <a
                 href="https://linkedin.com"
@@ -46,7 +47,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
+                <LinkedInLogoIcon className="h-5 w-5" />
               </a>
             </div>
           </div>
