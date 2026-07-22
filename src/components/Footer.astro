@@ -1,0 +1,65 @@
+---
+import { withBase } from '../lib/utils';
+
+const year = new Date().getFullYear();
+const groups = [
+  {
+    title: 'Services',
+    links: [
+      ['Business Websites', '/web-development'],
+      ['AI and Automation', '/ai-solutions'],
+      ['Education Technology', '/education-technology'],
+      ['Digital Consultancy', '/services'],
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      ['About', '/about'],
+      ['Projects', '/projects'],
+      ['Contact', '/contact'],
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      ['Privacy', '/privacy'],
+      ['Terms', '/terms'],
+      ['Cookies', '/cookies'],
+    ],
+  },
+];
+---
+
+<footer class="border-t border-white/10 bg-[#090b14]">
+  <div class="section-shell py-14">
+    <div class="grid gap-10 md:grid-cols-[1.3fr_2fr]">
+      <div class="max-w-sm">
+        <a href={withBase('/')} class="text-xl font-bold text-white">ZAKTec Solutions</a>
+        <p class="mt-4 leading-7 text-muted-foreground">
+          Practical AI, web and digital solutions for growing organisations.
+        </p>
+        <a class="text-link mt-5" href="https://www.linkedin.com/in/sherazcheema1/" target="_blank" rel="noreferrer">
+          Connect with Sheraz on LinkedIn
+        </a>
+      </div>
+
+      <div class="grid gap-8 sm:grid-cols-3">
+        {groups.map((group) => (
+          <div>
+            <h2 class="text-sm font-semibold uppercase tracking-wider text-white">{group.title}</h2>
+            <ul class="mt-4 space-y-3">
+              {group.links.map(([label, path]) => (
+                <li><a class="text-sm text-muted-foreground hover:text-white" href={withBase(path)}>{label}</a></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-white/10 pt-6 text-sm text-muted-foreground">
+      <p>&copy; {year} ZAKTec Solutions. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

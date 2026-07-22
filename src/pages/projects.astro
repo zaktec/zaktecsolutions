@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/main.astro';
+import PageIntro from '../components/PageIntro.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const projects = [
+  {
+    name: 'MathsTutorHelp',
+    type: 'ZAKTec project',
+    problem: 'Maths learners need a clear online route to tutoring support and learning information.',
+    solution: 'A tutoring website and digital learning service supporting maths learners.',
+    technologies: ['Responsive website', 'Digital learning content'],
+  },
+  {
+    name: 'TableTopLearning',
+    type: 'ZAKTec project',
+    problem: 'Tutors need a simple, maintainable way to present courses and provide online learner support.',
+    solution: 'An online course and tutor-support platform with a focused static-site foundation.',
+    technologies: ['Astro', 'Static site architecture'],
+  },
+  {
+    name: 'HAiBL',
+    type: 'ZAKTec project',
+    problem: 'Education providers need connected tools for managing courses, assessments and learner progress.',
+    solution: 'A learning platform with course management, assessments, progress tracking and tutor tools.',
+    technologies: ['Next.js', 'React', 'PostgreSQL', 'TypeScript'],
+  },
+];
+---
+
+<Layout title="Projects | ZAKTec Solutions" description="Selected ZAKTec Solutions projects across tutoring, online courses and education technology.">
+  <PageIntro eyebrow="Projects" title="Selected digital projects" description="A concise view of work developed by ZAKTec Solutions. Project descriptions focus on the problem, approach and technology without invented results." />
+
+  <section class="section-space">
+    <div class="section-shell grid gap-6 lg:grid-cols-3">
+      {projects.map((project) => <ProjectCard {...project} />)}
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16" aria-labelledby="project-notes-title">
+    <div class="section-shell max-w-4xl">
+      <h2 id="project-notes-title" class="section-title">Project links and screenshots</h2>
+      <p class="section-copy">Public links and verified screenshots will be added when they are confirmed and suitable for publication. No placeholder image is shown as if it were finished client work.</p>
+    </div>
+  </section>
+
+  <CallToAction title="Could your project benefit from a similar approach?" description="Tell us about the users, workflow and practical result you need." />
+</Layout>

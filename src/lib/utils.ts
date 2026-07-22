@@ -1,30 +1,19 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
-
-// Get the base path from Astro config (e.g., '/zaktecsolutions' or '/')
 const BASE_PATH = import.meta.env.BASE_URL || '/';
 
 /**
- * Prepends the base path to a URL for proper routing in GitHub Pages
- * @param path - The path to prepend the base to (e.g., '/components')
- * @returns The full path with base (e.g., '/zaktecsolutions/components')
+ * Prepends the configured base path to an internal URL.
+ * @param path - The internal path to prefix.
+ * @returns A GitHub Pages-safe internal URL.
  */
 export function withBase(path: string): string {
-  // Handle hash-only links (e.g., '#features')
   if (path.startsWith('#')) {
     return path;
   }
 
-  // Handle absolute URLs (external links)
-  if (path.startsWith('http://') || path.startsWith('https://')) {
+  if (/^(https?:|mailto:|tel:)/.test(path)) {
     return path;
   }
 
-  // Remove trailing slash from base and leading slash from path, then combine
   const base = BASE_PATH.replace(/\/$/, '');
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
 

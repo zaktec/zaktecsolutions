@@ -1,16 +1,115 @@
 ---
 import Layout from '../layouts/main.astro';
-import { Hero } from '@/components/Hero';
-import { Features } from '@/components/Features';
-import { Pricing } from '@/components/Pricing';
-import { Testimonials } from '@/components/Testimonials';
-import { FAQ } from '@/components/FAQ';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { withBase } from '../lib/utils';
+
+const audiences = [
+  'Small businesses',
+  'Tutors and education providers',
+  'Charities and community organisations',
+  'Independent professionals',
+];
+
+const steps = [
+  ['1. Discuss', 'We learn about the organisation, its users and current challenges.'],
+  ['2. Plan', 'We recommend a practical solution, clear scope and realistic cost.'],
+  ['3. Build', 'We design, develop and test the website or digital system.'],
+  ['4. Support', 'We provide launch support, training and optional ongoing maintenance.'],
+];
 ---
 
 <Layout>
-	<Hero client:load />
-	<Features client:load />
-	<Testimonials client:load />
-	<Pricing client:load />
-	<FAQ client:load />
+  <section class="relative overflow-hidden border-b border-white/10 py-20 md:py-32">
+    <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(139,92,246,0.18),transparent_42%)]"></div>
+    <div class="section-shell">
+      <p class="eyebrow">UK-based digital consultancy</p>
+      <h1 class="max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
+        AI, Web and Digital Solutions for Growing Organisations
+      </h1>
+      <p class="mt-7 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">
+        ZAKTec Solutions creates professional websites, practical AI tools and digital systems that help organisations save time, improve communication and work more effectively.
+      </p>
+      <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+        <a class="button-primary" href={withBase('/contact')}>Discuss Your Project</a>
+        <a class="button-secondary" href={withBase('/services')}>View Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="core-services-title">
+    <div class="section-shell">
+      <p class="eyebrow">Core services</p>
+      <h2 id="core-services-title" class="section-title">Practical technology, built around your organisation</h2>
+      <p class="section-copy">Focused support for the digital work that matters most: a credible web presence, useful automation and effective learning systems.</p>
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <ServiceCard title="Business Websites" description="Professional, responsive and easy-to-manage websites for small businesses, tutors, consultants, charities and community organisations." path="/web-development" linkLabel="Explore web development" />
+        <ServiceCard title="AI and Automation" description="Practical AI assistants and automated workflows that reduce repetitive administration and improve customer communication." path="/ai-solutions" linkLabel="Explore AI solutions" />
+        <ServiceCard title="Education Technology" description="Course websites, learning platforms, assessments, tutor dashboards and learner-progress systems." path="/education-technology" linkLabel="Explore education technology" />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16" aria-labelledby="audiences-title">
+    <div class="section-shell">
+      <h2 id="audiences-title" class="section-title">Who we help</h2>
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {audiences.map((audience) => <li class="rounded-xl border border-white/10 bg-background/60 p-5 font-medium text-slate-200">{audience}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="projects-title">
+    <div class="section-shell">
+      <p class="eyebrow">Selected projects</p>
+      <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
+        <div>
+          <h2 id="projects-title" class="section-title">Digital products shaped by real learning needs</h2>
+          <p class="section-copy">A selection of ZAKTec projects spanning tutoring, online courses and learning management.</p>
+        </div>
+        <a class="text-link" href={withBase('/projects')}>View all project details <span aria-hidden="true">&nbsp;→</span></a>
+      </div>
+      <div class="mt-10 grid gap-6 lg:grid-cols-3">
+        <ProjectCard name="MathsTutorHelp" type="ZAKTec project" problem="Maths learners need a clear online route to tutoring support and learning information." solution="A tutoring website and digital learning service focused on accessible maths support." technologies={['Responsive website', 'Digital learning content']} />
+        <ProjectCard name="TableTopLearning" type="ZAKTec project" problem="Tutors need a straightforward way to organise course information and support learners online." solution="An online course and tutor-support platform with a focused, maintainable structure." technologies={['Astro', 'Static site architecture']} />
+        <ProjectCard name="HAiBL" type="ZAKTec project" problem="Education providers need joined-up tools for courses, assessment and learner oversight." solution="A learning platform with course management, assessments, progress tracking and tutor tools." technologies={['Next.js', 'React', 'PostgreSQL', 'TypeScript']} />
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="process-title">
+    <div class="section-shell">
+      <p class="eyebrow">How we work</p>
+      <h2 id="process-title" class="section-title">Clear steps from first conversation to launch</h2>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {steps.map(([title, description]) => (
+          <article class="surface-card">
+            <h3 class="text-lg font-semibold text-white">{title}</h3>
+            <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="founder-title">
+    <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+      <div class="rounded-3xl border border-purple-400/20 bg-purple-500/10 p-8">
+        <p class="eyebrow">About the founder</p>
+        <p class="text-3xl font-bold text-white">Sheraz Cheema</p>
+        <p class="mt-3 text-slate-300">Educator, web developer and digital systems builder.</p>
+      </div>
+      <div>
+        <h2 id="founder-title" class="section-title">Education experience meets practical technology</h2>
+        <p class="section-copy">Sheraz Cheema is an educator, web developer and digital systems builder with experience in computer science, mathematics education, learning platforms and practical AI workflows.</p>
+        <div class="mt-7 flex flex-wrap gap-5">
+          <a class="text-link" href={withBase('/about')}>More about ZAKTec Solutions <span aria-hidden="true">&nbsp;→</span></a>
+          <a class="text-link" href="https://www.linkedin.com/in/sherazcheema1/" target="_blank" rel="noreferrer">View LinkedIn profile <span aria-hidden="true">&nbsp;↗</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CallToAction />
 </Layout>

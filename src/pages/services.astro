@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/main.astro';
+import PageIntro from '../components/PageIntro.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const services = [
+  {
+    title: 'Business Websites',
+    description: 'Credible, accessible websites that are easy to understand, maintain and develop over time.',
+    items: ['New business websites', 'Website redesign', 'Mobile and accessibility improvements', 'Performance improvements', 'SEO foundations', 'Domain and deployment support', 'Website maintenance'],
+  },
+  {
+    title: 'AI and Automation',
+    description: 'Focused uses of AI and workflow automation that support people rather than obscure how work is done.',
+    items: ['AI opportunity reviews', 'Enquiry assistants', 'Internal knowledge assistants', 'Email and form automation', 'Content workflows', 'Document-processing workflows', 'Practical AI governance support'],
+  },
+  {
+    title: 'Education Technology',
+    description: 'Digital learning tools designed around the practical needs of tutors, learners and education providers.',
+    items: ['Course websites', 'Tutor dashboards', 'Assessments and quizzes', 'Progress tracking', 'Resource libraries', 'Learner portals', 'Education workflow automation'],
+  },
+  {
+    title: 'Digital Consultancy and Training',
+    description: 'Clear advice and hands-on support for organisations making sensible technology decisions.',
+    items: ['Digital strategy', 'AI training', 'Website audits', 'Technology selection', 'Google Workspace support', 'Basic cybersecurity and access reviews', 'Staff training'],
+  },
+];
+
+const faqs = [
+  ['What types of organisations do you work with?', 'We primarily support small businesses, tutors, education providers, charities, community organisations and independent professionals.'],
+  ['Can you improve an existing website?', 'Yes. We can review its design, mobile experience, performance, accessibility, content and search visibility.'],
+  ['Do you build AI chatbots?', 'We build practical enquiry and internal knowledge assistants based on approved business information, with clear limitations and human escalation where appropriate.'],
+  ['How much does a project cost?', 'Costs depend on the size and complexity of the work. After an initial discussion, we provide a clear scope and quotation.'],
+  ['Do you provide ongoing support?', 'Yes. Maintenance and technical support can be provided after launch.'],
+];
+---
+
+<Layout title="Services | ZAKTec Solutions" description="Website development, practical AI automation, education technology and digital consultancy services for growing organisations.">
+  <PageIntro eyebrow="Services" title="Digital services designed around real organisational needs" description="Choose focused support for a new website, a better workflow, an education platform or a clearer digital plan." />
+
+  <section class="section-space">
+    <div class="section-shell grid gap-6 lg:grid-cols-2">
+      {services.map((service) => (
+        <article class="surface-card">
+          <h2 class="text-2xl font-bold text-white">{service.title}</h2>
+          <p class="mt-3 leading-7 text-muted-foreground">{service.description}</p>
+          <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+            {service.items.map((item) => <li class="flex gap-3 text-sm leading-6 text-slate-300"><span class="text-purple-300" aria-hidden="true">•</span>{item}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16" aria-labelledby="pricing-title">
+    <div class="section-shell">
+      <h2 id="pricing-title" class="section-title">Clear pricing based on your requirements</h2>
+      <p class="section-copy">Smaller, defined services may have starting prices. Larger websites, AI systems and automation projects are quoted after an initial discussion.</p>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="faq-title">
+    <div class="section-shell max-w-4xl">
+      <p class="eyebrow">Frequently asked questions</p>
+      <h2 id="faq-title" class="section-title">Useful answers before we talk</h2>
+      <div class="mt-8 divide-y divide-white/10 border-y border-white/10">
+        {faqs.map(([question, answer]) => (
+          <details class="group py-5">
+            <summary class="cursor-pointer list-none pr-8 text-lg font-semibold text-white">{question}</summary>
+            <p class="mt-3 max-w-3xl leading-7 text-muted-foreground">{answer}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CallToAction />
+</Layout>

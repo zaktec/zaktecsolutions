@@ -1,0 +1,23 @@
+---
+import { withBase } from '../lib/utils';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Have a website, AI or digital project in mind?',
+  description = 'Tell us what you are trying to improve, and we will recommend a practical next step.',
+} = Astro.props;
+---
+
+<section class="section-space">
+  <div class="section-shell">
+    <div class="rounded-3xl border border-purple-400/25 bg-purple-500/10 px-6 py-12 text-center md:px-12">
+      <h2 class="text-3xl font-bold tracking-tight text-white md:text-4xl">{title}</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-300">{description}</p>
+      <a class="button-primary mt-8" href={withBase('/contact')}>Discuss Your Project</a>
+    </div>
+  </div>
+</section>

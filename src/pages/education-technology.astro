@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/main.astro';
+import PageIntro from '../components/PageIntro.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const capabilities = ['Course websites', 'Learning platforms', 'Tutor dashboards', 'Assessments', 'Progress tracking', 'Parent or learner reports', 'Resource libraries', 'Enrolment and enquiry workflows'];
+---
+
+<Layout title="Education Technology | ZAKTec Solutions" description="Course websites, learning platforms, assessments and tutor tools designed around real education workflows.">
+  <PageIntro eyebrow="Education technology" title="Digital Systems for Tutors and Education Providers" description="Learning technology works best when it respects how tutors teach, how learners progress and how education providers manage their day-to-day work." />
+
+  <section class="section-space" aria-labelledby="education-tools-title">
+    <div class="section-shell">
+      <p class="eyebrow">What we build</p>
+      <h2 id="education-tools-title" class="section-title">Useful tools for teaching, learning and oversight</h2>
+      <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {capabilities.map((capability) => <div class="surface-card font-medium text-slate-200">{capability}</div>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="experience-title">
+    <div class="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div>
+        <p class="eyebrow">A genuine differentiator</p>
+        <h2 id="experience-title" class="section-title">Education and technical experience in the same conversation</h2>
+      </div>
+      <div class="content-page">
+        <p>Sheraz Cheema's experience across computer science, mathematics education, learning platforms and digital systems helps connect technical decisions with the needs of tutors and learners.</p>
+        <p>That means questions about assessment, progress, resources and reporting can be considered as education workflows first—not just software features.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="starting-point-title">
+    <div class="section-shell max-w-4xl">
+      <h2 id="starting-point-title" class="section-title">Start with one clear education need</h2>
+      <p class="section-copy">A project might begin with a simple course website or assessment workflow, then develop only when real use shows what learners, tutors or administrators need next.</p>
+    </div>
+  </section>
+
+  <CallToAction title="Planning a course website or learning system?" description="Share the learners, teaching process and administrative challenge you want the technology to support." />
+</Layout>

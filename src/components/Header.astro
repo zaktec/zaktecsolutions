@@ -1,0 +1,62 @@
+---
+import { withBase } from '../lib/utils';
+
+const navigation = [
+  { label: 'Home', path: '/' },
+  { label: 'Services', path: '/services' },
+  { label: 'AI Solutions', path: '/ai-solutions' },
+  { label: 'Web Development', path: '/web-development' },
+  { label: 'Education Technology', path: '/education-technology' },
+  { label: 'Projects', path: '/projects' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+];
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const currentPath = Astro.url.pathname.replace(base, '') || '/';
+const isCurrent = (path: string) => path === '/' ? currentPath === '/' : currentPath.startsWith(path);
+---
+
+<header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b0d18]/95 backdrop-blur">
+  <div class="section-shell flex min-h-20 items-center justify-between gap-4">
+    <a href={withBase('/')} class="flex shrink-0 items-center gap-3" aria-label="ZAKTec Solutions home">
+      <span class="grid h-10 w-10 place-items-center rounded-lg bg-purple-500 font-bold text-white" aria-hidden="true">Z</span>
+      <span class="text-base font-bold tracking-tight text-white sm:text-lg">ZAKTec Solutions</span>
+    </a>
+
+    <nav class="hidden xl:block" aria-label="Primary navigation">
+      <ul class="flex items-center gap-5">
+        {navigation.map((item) => (
+          <li>
+            <a
+              href={withBase(item.path)}
+              class="rounded px-1 py-2 text-sm font-medium text-slate-300 transition hover:text-white"
+              aria-current={isCurrent(item.path) ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <details class="relative xl:hidden">
+      <summary class="cursor-pointer list-none rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-white">Menu</summary>
+      <nav class="absolute right-0 top-14 w-72 rounded-xl border border-white/10 bg-[#111525] p-3 shadow-2xl" aria-label="Mobile navigation">
+        <ul class="space-y-1">
+          {navigation.map((item) => (
+            <li>
+              <a
+                href={withBase(item.path)}
+                class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10"
+                aria-current={isCurrent(item.path) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>

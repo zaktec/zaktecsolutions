@@ -1,119 +1,74 @@
 ---
 import Layout from '../layouts/main.astro';
-import { Users, Target, Zap, Heart } from 'lucide-react';
+import PageIntro from '../components/PageIntro.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const principles = [
+  ['Keep technology understandable', 'Explain options and trade-offs in clear language so decisions remain with the organisation.'],
+  ['Avoid unnecessary complexity', 'Choose the simplest maintainable approach that meets the actual need.'],
+  ['Build maintainable solutions', 'Use clear structures, documented decisions and widely supported technology.'],
+  ['Focus on genuine needs', 'Start with users, workflows and organisational priorities rather than fashionable features.'],
+  ['Provide clear advice and support', 'Set realistic expectations and make the next step easy to understand.'],
+];
 ---
 
-<Layout title="About Us - ZakTecSolutions">
-	<section class="py-20 md:py-32">
-		<div class="container mx-auto px-4">
-			<div class="max-w-4xl mx-auto">
-				<div class="text-center space-y-4 mb-16">
-					<h1 class="text-4xl md:text-6xl font-bold">
-						About{" "}
-						<span class="bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
-							ZakTecSolutions
-						</span>
-					</h1>
-					<p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-						We're on a mission to democratize AI and make it accessible to everyone
-					</p>
-				</div>
+<Layout title="About ZAKTec Solutions" description="Learn about ZAKTec Solutions, a UK-based AI, web and digital consultancy founded by educator and developer Sheraz Cheema.">
+  <PageIntro eyebrow="About" title="About ZAKTec Solutions" description="ZAKTec Solutions is a UK-based AI, web and digital consultancy helping small organisations use technology more effectively through professional websites, practical automation and education-focused digital systems." />
 
-				<!-- Story Section -->
-				<div class="prose prose-lg dark:prose-invert mx-auto mb-16">
-					<h2>Our Story</h2>
-					<p>
-						Founded in 2024, ZakTecSolutions emerged from a simple observation: while artificial intelligence
-						was advancing rapidly, it remained inaccessible to most developers and businesses. We set
-						out to change that.
-					</p>
-					<p>
-						Our team of AI researchers, engineers, and product designers came together with a shared
-						vision: to build a platform that makes cutting-edge AI technology as easy to use as
-						sending an email. Today, we're proud to serve thousands of developers and businesses
-						worldwide.
-					</p>
-				</div>
+  <section class="section-space" aria-labelledby="what-we-do-title">
+    <div class="section-shell grid gap-12 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow">What we do</p>
+        <h2 id="what-we-do-title" class="section-title">Practical digital work with a clear purpose</h2>
+        <p class="section-copy">We design and build websites, AI-supported workflows and education systems. We also help organisations review existing tools and decide where change is worthwhile.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Who we help</p>
+        <h2 class="section-title">Smaller organisations with real work to improve</h2>
+        <p class="section-copy">Our work is suited to small businesses, educators, tutors, charities, community organisations and independent professionals who need clear advice and maintainable technology.</p>
+      </div>
+    </div>
+  </section>
 
-				<!-- Values Grid -->
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-					<div class="p-6 rounded-2xl border bg-card">
-						<div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 mb-4">
-							<Target className="h-6 w-6 text-white" />
-						</div>
-						<h3 class="text-xl font-semibold mb-2">Our Mission</h3>
-						<p class="text-muted-foreground">
-							To empower developers and businesses with accessible, powerful AI tools that
-							drive innovation and create value.
-						</p>
-					</div>
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="approach-title">
+    <div class="section-shell">
+      <p class="eyebrow">Our approach</p>
+      <h2 id="approach-title" class="section-title">Principles that guide the work</h2>
+      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {principles.map(([title, description]) => (
+          <article class="surface-card">
+            <h3 class="text-lg font-semibold text-white">{title}</h3>
+            <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
 
-					<div class="p-6 rounded-2xl border bg-card">
-						<div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 mb-4">
-							<Zap className="h-6 w-6 text-white" />
-						</div>
-						<h3 class="text-xl font-semibold mb-2">Our Vision</h3>
-						<p class="text-muted-foreground">
-							A world where AI is a force for good, accessible to all, and used to solve
-							humanity's greatest challenges.
-						</p>
-					</div>
+  <section class="section-space" aria-labelledby="founder-title">
+    <div class="section-shell grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+      <div class="surface-card">
+        <p class="eyebrow">Founder</p>
+        <p class="text-3xl font-bold text-white">Sheraz Cheema</p>
+        <a class="text-link mt-5" href="https://www.linkedin.com/in/sherazcheema1/" target="_blank" rel="noreferrer">View LinkedIn profile <span aria-hidden="true">&nbsp;↗</span></a>
+      </div>
+      <div>
+        <h2 id="founder-title" class="section-title">Education, development and digital systems</h2>
+        <div class="content-page">
+          <p>Sheraz Cheema is an educator, web developer and digital systems builder with experience in computer science, mathematics education, learning platforms and practical AI workflows.</p>
+          <p>ZAKTec Solutions is deliberately presented as a focused consultancy. It does not claim a fictional global team, unverified partnerships or scale that cannot be evidenced.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-					<div class="p-6 rounded-2xl border bg-card">
-						<div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-green-500 to-emerald-500 mb-4">
-							<Users className="h-6 w-6 text-white" />
-						</div>
-						<h3 class="text-xl font-semibold mb-2">Our Team</h3>
-						<p class="text-muted-foreground">
-							A diverse group of AI experts, engineers, and innovators from leading tech
-							companies and research institutions.
-						</p>
-					</div>
+  <section class="border-y border-white/10 bg-white/[0.025] py-16" aria-labelledby="technology-title">
+    <div class="section-shell max-w-4xl">
+      <p class="eyebrow">Technology and experience</p>
+      <h2 id="technology-title" class="section-title">Tools chosen to suit the project</h2>
+      <p class="section-copy">Experience across static websites, modern web applications, databases, course systems, assessment workflows and AI-supported processes allows each recommendation to be based on the work required rather than a single preferred product.</p>
+    </div>
+  </section>
 
-					<div class="p-6 rounded-2xl border bg-card">
-						<div class="inline-flex p-3 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 mb-4">
-							<Heart className="h-6 w-6 text-white" />
-						</div>
-						<h3 class="text-xl font-semibold mb-2">Our Values</h3>
-						<p class="text-muted-foreground">
-							Transparency, ethics, innovation, and customer success guide everything
-							we do at ZakTecSolutions.
-						</p>
-					</div>
-				</div>
-
-				<!-- Stats -->
-				<div class="grid grid-cols-3 gap-8 py-12 border-y">
-					<div class="text-center">
-						<div class="text-3xl md:text-4xl font-bold mb-2">50K+</div>
-						<p class="text-sm text-muted-foreground">Active Users</p>
-					</div>
-					<div class="text-center">
-						<div class="text-3xl md:text-4xl font-bold mb-2">10M+</div>
-						<p class="text-sm text-muted-foreground">API Requests/Day</p>
-					</div>
-					<div class="text-center">
-						<div class="text-3xl md:text-4xl font-bold mb-2">99.9%</div>
-						<p class="text-sm text-muted-foreground">Uptime SLA</p>
-					</div>
-				</div>
-
-				<!-- CTA -->
-				<div class="text-center mt-16">
-					<h2 class="text-2xl md:text-3xl font-bold mb-4">Join Our Journey</h2>
-					<p class="text-muted-foreground mb-6">
-						We're always looking for talented people to join our team
-					</p>
-					<div class="flex flex-col sm:flex-row gap-4 justify-center">
-						<a href="#" class="inline-flex items-center justify-center h-10 px-6 rounded-md bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors">
-							View Open Positions
-						</a>
-						<a href="/contact" class="inline-flex items-center justify-center h-10 px-6 rounded-md border bg-background hover:bg-accent hover:text-accent-foreground transition-colors">
-							Get in Touch
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+  <CallToAction />
 </Layout>
