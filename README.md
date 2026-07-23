@@ -1,6 +1,6 @@
-# ZAKTec Solutions
+# ZakTec Solutions
 
-The official website for ZAKTec Solutions, a UK-based AI, web and digital consultancy supporting small businesses, educators, charities, community organisations and independent professionals.
+The official website for ZakTec Solutions, a UK-based AI, web and digital consultancy supporting small businesses, educators, charities, community organisations and independent professionals.
 
 ## Technology
 
@@ -42,7 +42,7 @@ https://zaktec.github.io/zaktecsolutions/
 
 ## Brand
 
-See `Brand.md` for the required public spelling and usage of **ZAKTec Solutions**.
+See `Brand.md` for the required public spelling and usage of **ZakTec Solutions**.
 
 ## Archive
 

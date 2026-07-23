@@ -1,4 +1,4 @@
-# ZAKTec Solutions Website TODO
+# ZakTec Solutions Website TODO
 
 ## Confirm before wider publication
 

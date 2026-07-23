@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = 'ZAKTec Solutions | AI, Web and Digital Consultancy',
-  description = 'ZAKTec Solutions provides professional websites, practical AI automation and education technology services for small businesses, educators, charities and community organisations.',
+  title = 'ZakTec Solutions | AI, Web and Digital Consultancy',
+  description = 'ZakTec Solutions provides professional websites, digital marketing, practical AI automation and education technology services for small businesses, educators, charities and community organisations.',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
@@ -28,7 +28,7 @@ const favicon = `${import.meta.env.BASE_URL}favicon.svg`;
     <link rel="canonical" href={canonical} />
     <link rel="icon" type="image/svg+xml" href={favicon} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="ZAKTec Solutions" />
+    <meta property="og:site_name" content="ZakTec Solutions" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />

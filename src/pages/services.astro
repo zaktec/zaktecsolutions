@@ -20,6 +20,12 @@ const services = [
     items: ['Course websites', 'Tutor dashboards', 'Assessments and quizzes', 'Progress tracking', 'Resource libraries', 'Learner portals', 'Education workflow automation'],
   },
   {
+    id: 'digital-marketing',
+    title: 'Digital Marketing',
+    description: 'Practical marketing support that strengthens your message, improves visibility and helps turn attention into genuine enquiries.',
+    items: ['Marketing strategy', 'Search engine optimisation', 'Content planning and creation', 'Social media campaigns', 'Email marketing', 'Campaign landing pages', 'Analytics and performance reporting'],
+  },
+  {
     title: 'Digital Consultancy and Training',
     description: 'Clear advice and hands-on support for organisations making sensible technology decisions.',
     items: ['Digital strategy', 'AI training', 'Website audits', 'Technology selection', 'Google Workspace support', 'Basic cybersecurity and access reviews', 'Staff training'],
@@ -35,13 +41,13 @@ const faqs = [
 ];
 ---
 
-<Layout title="Services | ZAKTec Solutions" description="Website development, practical AI automation, education technology and digital consultancy services for growing organisations.">
-  <PageIntro eyebrow="Services" title="Digital services designed around real organisational needs" description="Choose focused support for a new website, a better workflow, an education platform or a clearer digital plan." />
+<Layout title="Services | ZakTec Solutions" description="Website development, digital marketing, practical AI automation, education technology and digital consultancy services for growing organisations.">
+  <PageIntro eyebrow="Services" title="Digital services designed around real organisational needs" description="Choose focused support for a new website, stronger marketing, a better workflow, an education platform or a clearer digital plan." />
 
   <section class="section-space">
     <div class="section-shell grid gap-6 lg:grid-cols-2">
       {services.map((service) => (
-        <article class="surface-card">
+        <article class="surface-card" id={service.id}>
           <h2 class="text-2xl font-bold text-white">{service.title}</h2>
           <p class="mt-3 leading-7 text-muted-foreground">{service.description}</p>
           <ul class="mt-6 grid gap-3 sm:grid-cols-2">
@@ -55,7 +61,7 @@ const faqs = [
   <section class="border-y border-white/10 bg-white/[0.025] py-16" aria-labelledby="pricing-title">
     <div class="section-shell">
       <h2 id="pricing-title" class="section-title">Clear pricing based on your requirements</h2>
-      <p class="section-copy">Smaller, defined services may have starting prices. Larger websites, AI systems and automation projects are quoted after an initial discussion.</p>
+      <p class="section-copy">Smaller, defined services may have starting prices. Larger websites, marketing campaigns, AI systems and automation projects are quoted after an initial discussion.</p>
     </div>
   </section>
 

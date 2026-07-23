@@ -2,7 +2,7 @@
   "name": "zaktecsolutions",
   "type": "module",
   "version": "1.0.0",
-  "description": "The official ZAKTec Solutions consultancy website",
+  "description": "The official ZakTec Solutions consultancy website",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

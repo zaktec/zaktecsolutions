@@ -1,4 +1,4 @@
-# Archived ZAKTec Solutions template
+# Archived ZakTec Solutions template
 
 This directory preserves the original Astro AI SaaS template as it existed at Git checkpoint `658e10c` before the consultancy redesign.
 
@@ -14,4 +14,3 @@ This directory preserves the original Astro AI SaaS template as it existed at Gi
 - `content/` — reserved for archived content collections; no `src/content/` directory existed at the checkpoint.
 
 Archived files are retained only for reference and reuse. Nothing in this directory is imported by the active website, and Astro does not generate routes from it.
-
