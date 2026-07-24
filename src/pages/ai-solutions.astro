@@ -4,23 +4,23 @@ import PageIntro from '../components/PageIntro.astro';
 import CallToAction from '../components/CallToAction.astro';
 
 const outcomes = [
-  ['Reduce repetitive administration', 'Identify repeatable tasks and introduce proportionate automation where it provides clear value.'],
-  ['Improve enquiry handling', 'Help people find approved information while retaining an obvious route to human support.'],
-  ['Organise internal information', 'Make policies, guidance and working knowledge easier for staff to search and use.'],
-  ['Draft and review content', 'Create controlled workflows for first drafts, summaries and structured review.'],
-  ['Connect everyday tools', 'Link forms, email, calendars and spreadsheets to reduce manual copying and missed follow-up.'],
-  ['Build staff confidence', 'Train people to use AI safely, critically and appropriately in their everyday work.'],
+  ['Save admin time', 'Automate repeat tasks where it makes sense.'],
+  ['Answer common questions', 'Help people find approved information and contact a person when needed.'],
+  ['Find information faster', 'Make policies, guidance and staff knowledge easier to search.'],
+  ['Support content work', 'Help with first drafts, summaries and reviews.'],
+  ['Connect your tools', 'Link forms, email, calendars and spreadsheets.'],
+  ['Train your team', 'Show staff how to use AI safely and confidently.'],
 ];
 ---
 
-<Layout title="Practical AI Solutions | ZakTec Solutions" description="Practical AI assistants, automation workflows and responsible AI training for small organisations.">
-  <PageIntro eyebrow="AI solutions" title="Practical AI Solutions for Everyday Work" description="ZakTec Solutions helps organisations apply AI where it can save time or improve communication, without replacing judgement, accountability or human support." />
+<Layout title="AI and Automation | ZakTec Solutions" description="AI assistants, automation and staff training for smaller teams.">
+  <PageIntro eyebrow="AI solutions" title="AI Tools That Make Everyday Work Easier" description="Use AI to reduce admin, answer common questions and organise information while your team stays in control." />
 
   <section class="section-space" aria-labelledby="outcomes-title">
     <div class="section-shell">
-      <p class="eyebrow">Business outcomes</p>
-      <h2 id="outcomes-title" class="section-title">Start with the work, not the technology</h2>
-      <p class="section-copy">We review the task, information and risks first, then recommend the simplest useful approach.</p>
+      <p class="eyebrow">How AI can help</p>
+      <h2 id="outcomes-title" class="section-title">Start with a task you want to improve</h2>
+      <p class="section-copy">We look at the task, the information involved and any risks before suggesting a solution.</p>
       <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {outcomes.map(([title, description]) => (
           <article class="surface-card">
@@ -35,27 +35,26 @@ const outcomes = [
   <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="responsible-title">
     <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
       <div>
-        <p class="eyebrow">Responsible use</p>
-        <h2 id="responsible-title" class="section-title">Clear limits keep AI useful</h2>
+        <p class="eyebrow">Safe use</p>
+        <h2 id="responsible-title" class="section-title">People stay in control</h2>
       </div>
       <ul class="grid gap-4 sm:grid-cols-2">
-        <li class="surface-card">AI output requires review before it is relied upon or shared.</li>
-        <li class="surface-card">Sensitive data must be handled carefully and only in suitable systems.</li>
-        <li class="surface-card">High-risk decisions should not be fully automated.</li>
-        <li class="surface-card">Human escalation should remain available wherever people need support.</li>
+        <li class="surface-card">Check AI output before using or sharing it.</li>
+        <li class="surface-card">Use sensitive data only in approved systems.</li>
+        <li class="surface-card">Keep people responsible for important decisions.</li>
+        <li class="surface-card">Always provide a route to human support.</li>
       </ul>
     </div>
   </section>
 
   <section class="section-space" aria-labelledby="approach-title">
     <div class="section-shell max-w-4xl">
-      <h2 id="approach-title" class="section-title">A measured route from idea to working process</h2>
+      <h2 id="approach-title" class="section-title">Test the idea before investing more</h2>
       <div class="content-page">
-        <p>Work normally begins with a short opportunity review. We map the current process, identify the information involved and agree what a successful improvement would look like.</p>
-        <p>A small prototype can then test whether the idea is genuinely useful. If it is, the workflow is documented, tested with its intended users and introduced with appropriate guidance.</p>
+        <p>We first review the current process and agree what should improve. A small prototype can then show whether the idea is useful before a larger system is built.</p>
       </div>
     </div>
   </section>
 
-  <CallToAction title="Could practical AI improve part of your day-to-day work?" description="Describe the process you want to improve and we will help you assess the opportunity, limitations and next step." />
+  <CallToAction title="Could AI save your team time?" description="Tell us which task takes too long, and we’ll help you assess the options." />
 </Layout>

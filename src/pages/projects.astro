@@ -6,31 +6,34 @@ import CallToAction from '../components/CallToAction.astro';
 
 const projects = [
   {
+    id: 'mathstutorhelp',
     name: 'MathsTutorHelp',
     type: 'ZakTec project',
-    problem: 'Maths learners need a clear online route to tutoring support and learning information.',
-    solution: 'A tutoring website and digital learning service supporting maths learners.',
+    problem: 'Learners need an easy way to find maths tutoring and support.',
+    solution: 'A simple tutoring website with clear learning information.',
     technologies: ['Responsive website', 'Digital learning content'],
   },
   {
+    id: 'tabletop-learning',
     name: 'TableTopLearning',
     type: 'ZakTec project',
-    problem: 'Tutors need a simple, maintainable way to present courses and provide online learner support.',
-    solution: 'An online course and tutor-support platform with a focused static-site foundation.',
+    problem: 'Tutors need one place to share courses and support learners.',
+    solution: 'An easy-to-maintain course and tutor-support website.',
     technologies: ['Astro', 'Static site architecture'],
   },
   {
+    id: 'haibl',
     name: 'HAiBL',
     type: 'ZakTec project',
-    problem: 'Education providers need connected tools for managing courses, assessments and learner progress.',
-    solution: 'A learning platform with course management, assessments, progress tracking and tutor tools.',
+    problem: 'Education providers need connected course and assessment tools.',
+    solution: 'A platform for courses, assessments, progress and tutor tasks.',
     technologies: ['Next.js', 'React', 'PostgreSQL', 'TypeScript'],
   },
 ];
 ---
 
 <Layout title="Projects | ZakTec Solutions" description="Selected ZakTec Solutions projects across tutoring, online courses and education technology.">
-  <PageIntro eyebrow="Projects" title="Selected digital projects" description="A concise view of work developed by ZakTec Solutions. Project descriptions focus on the problem, approach and technology without invented results." />
+  <PageIntro eyebrow="Projects" title="Selected Digital Projects" description="Examples of websites and learning systems built by ZakTec Solutions." />
 
   <section class="section-space">
     <div class="section-shell grid gap-6 lg:grid-cols-3">
@@ -38,12 +41,5 @@ const projects = [
     </div>
   </section>
 
-  <section class="border-y border-white/10 bg-white/[0.025] py-16" aria-labelledby="project-notes-title">
-    <div class="section-shell max-w-4xl">
-      <h2 id="project-notes-title" class="section-title">Project links and screenshots</h2>
-      <p class="section-copy">Public links and verified screenshots will be added when they are confirmed and suitable for publication. No placeholder image is shown as if it were finished client work.</p>
-    </div>
-  </section>
-
-  <CallToAction title="Could your project benefit from a similar approach?" description="Tell us about the users, workflow and practical result you need." />
+  <CallToAction title="Have a similar project in mind?" description="Tell us who it is for and what it needs to achieve." />
 </Layout>

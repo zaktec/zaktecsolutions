@@ -6,15 +6,15 @@ import CallToAction from '../components/CallToAction.astro';
 const capabilities = ['Mobile-first design', 'Responsive layouts', 'Accessibility', 'Fast loading', 'SEO foundations', 'Clear content structure', 'Contact and enquiry systems', 'Easy maintenance', 'Secure deployment'];
 ---
 
-<Layout title="Web Development | ZakTec Solutions" description="Professional, accessible and maintainable websites for small businesses, educators, charities and independent professionals.">
-  <PageIntro eyebrow="Web development" title="Professional Websites Built Around Real Business Needs" description="A good website should explain what you do, work well on every device and make it easy for the right people to contact you." />
+<Layout title="Web Development | ZakTec Solutions" description="Fast, accessible websites that are easy to use and manage.">
+  <PageIntro eyebrow="Web development" title="A Website That Is Easy to Use and Manage" description="Your website should explain what you do, work on every device and make it easy to contact you." />
 
   <section class="section-space" aria-labelledby="website-principles-title">
     <div class="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
       <div>
-        <p class="eyebrow">Website foundations</p>
-        <h2 id="website-principles-title" class="section-title">Clear, quick and straightforward to maintain</h2>
-        <p class="section-copy">We concentrate on the essentials that support trust and usability rather than adding complexity for its own sake.</p>
+        <p class="eyebrow">What you get</p>
+        <h2 id="website-principles-title" class="section-title">Everything a good business website needs</h2>
+        <p class="section-copy">We focus on useful features and leave out anything you do not need.</p>
       </div>
       <ul class="grid gap-4 sm:grid-cols-2">
         {capabilities.map((capability) => <li class="surface-card font-medium text-slate-200">{capability}</li>)}
@@ -24,21 +24,21 @@ const capabilities = ['Mobile-first design', 'Responsive layouts', 'Accessibilit
 
   <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="static-title">
     <div class="section-shell max-w-4xl">
-      <p class="eyebrow">The right level of technology</p>
-      <h2 id="static-title" class="section-title">When a static Astro website is enough</h2>
+      <p class="eyebrow">Simple by design</p>
+      <h2 id="static-title" class="section-title">A simple website may be all you need</h2>
       <div class="content-page">
-        <p>Many service websites mainly need well-structured information, strong performance and a reliable way for visitors to make contact. A static Astro website is often ideal: it is fast, secure by design and inexpensive to host.</p>
-        <p>More complex application features are recommended only when the organisation genuinely needs user accounts, live data, payments, workflow management or other interactive systems.</p>
+        <p>Many businesses only need clear information and a reliable contact route. This type of website is fast, secure and inexpensive to host.</p>
+        <p>We add accounts, payments or other advanced features only when they serve a real purpose.</p>
       </div>
     </div>
   </section>
 
   <section class="section-space" aria-labelledby="existing-title">
     <div class="section-shell">
-      <h2 id="existing-title" class="section-title">Improving an existing website</h2>
-      <p class="section-copy">A focused review can identify practical improvements to mobile usability, accessibility, speed, content structure and search visibility before a full redesign is considered.</p>
+      <h2 id="existing-title" class="section-title">Already have a website?</h2>
+      <p class="section-copy">We can improve its mobile layout, accessibility, speed, content and search visibility without rebuilding everything.</p>
     </div>
   </section>
 
-  <CallToAction title="Need a new website or a clearer plan for the one you have?" description="Tell us what is working, what is getting in the way and what you want visitors to do next." />
+  <CallToAction title="Need a new or improved website?" description="Tell us what you want the website to do for your business." />
 </Layout>

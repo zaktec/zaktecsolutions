@@ -1,9 +1,12 @@
 ---
-import { withBase } from '../lib/utils';
-import Logo from './Logo.astro';
+import { withBase } from '../../src/lib/utils';
 
 const navigation = [
+  { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
+  { label: 'AI Solutions', path: '/ai-solutions' },
+  { label: 'Web Development', path: '/web-development' },
+  { label: 'Education Technology', path: '/education-technology' },
   { label: 'Projects', path: '/projects' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
@@ -16,17 +19,17 @@ const isCurrent = (path: string) => path === '/' ? currentPath === '/' : current
 
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b0d18]/95 backdrop-blur">
   <div class="section-shell flex min-h-20 items-center justify-between gap-4">
-    <a href={withBase('/')} class="inline-flex min-h-11 shrink-0 items-center rounded-lg" aria-label="ZakTec Solutions home">
-      <Logo compact />
+    <a href={withBase('/')} class="shrink-0" aria-label="ZakTec Solutions home">
+      <span class="text-base font-bold tracking-tight text-white sm:text-lg"><span class="text-purple-400">ZakTec</span> Solutions</span>
     </a>
 
-    <nav class="hidden md:block" aria-label="Primary navigation">
+    <nav class="hidden xl:block" aria-label="Primary navigation">
       <ul class="flex items-center gap-5">
         {navigation.map((item) => (
           <li>
             <a
               href={withBase(item.path)}
-              class="inline-flex min-h-11 items-center rounded px-1 text-sm font-medium text-slate-300 transition hover:text-white"
+              class="rounded px-1 py-2 text-sm font-medium text-slate-300 transition hover:text-white"
               aria-current={isCurrent(item.path) ? 'page' : undefined}
             >
               {item.label}
@@ -36,17 +39,15 @@ const isCurrent = (path: string) => path === '/' ? currentPath === '/' : current
       </ul>
     </nav>
 
-    <details class="group relative md:hidden">
-      <summary class="inline-flex min-h-11 cursor-pointer list-none items-center rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-purple-400 hover:bg-purple-500/10 [&::-webkit-details-marker]:hidden" aria-label="Open primary navigation">
-        Menu
-      </summary>
+    <details class="relative xl:hidden">
+      <summary class="cursor-pointer list-none rounded-lg border border-white/15 px-4 py-2 text-sm font-semibold text-white">Menu</summary>
       <nav class="absolute right-0 top-14 w-72 rounded-xl border border-white/10 bg-[#111525] p-3 shadow-2xl" aria-label="Mobile navigation">
         <ul class="space-y-1">
           {navigation.map((item) => (
             <li>
               <a
                 href={withBase(item.path)}
-                class="flex min-h-11 items-center rounded-lg px-4 py-2 text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-white"
+                class="block rounded-lg px-4 py-3 text-sm font-medium text-slate-200 hover:bg-white/10"
                 aria-current={isCurrent(item.path) ? 'page' : undefined}
               >
                 {item.label}

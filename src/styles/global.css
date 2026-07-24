@@ -37,7 +37,7 @@
   }
 
   body {
-    @apply min-h-screen bg-background text-foreground antialiased;
+    @apply min-h-screen bg-background text-base leading-7 text-foreground antialiased;
     font-feature-settings: "ss01" 1, "cv02" 1;
   }
 
@@ -73,7 +73,7 @@
   }
 
   .surface-card {
-    @apply rounded-2xl border border-white/10 bg-white/[0.035] p-6;
+    @apply rounded-2xl border border-white/10 bg-white/[0.035] p-5 md:p-6;
   }
 
   .button-primary {

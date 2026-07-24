@@ -14,3 +14,12 @@ This directory preserves the original Astro AI SaaS template as it existed at Gi
 - `content/` — reserved for archived content collections; no `src/content/` directory existed at the checkpoint.
 
 Archived files are retained only for reference and reuse. Nothing in this directory is imported by the active website, and Astro does not generate routes from it.
+
+## Homepage refinement archive
+
+Before the July 2026 company-focused homepage refinement, the active header and footer were copied to:
+
+- `components/Header-before-homepage-refinement.astro`
+- `components/Footer-before-homepage-refinement.astro`
+
+These copies preserve the pre-monogram text branding and earlier footer service list. They are reference files only and are not imported by the live site.

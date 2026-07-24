@@ -6,48 +6,42 @@ import CallToAction from '../components/CallToAction.astro';
 const services = [
   {
     title: 'Business Websites',
-    description: 'Credible, accessible websites that are easy to understand, maintain and develop over time.',
-    items: ['New business websites', 'Website redesign', 'Mobile and accessibility improvements', 'Performance improvements', 'SEO foundations', 'Domain and deployment support', 'Website maintenance'],
+    description: 'Websites that look professional, work on every device and are easy to update.',
+    items: ['New websites', 'Website redesigns', 'Mobile improvements', 'Accessibility', 'Speed improvements', 'SEO basics', 'Maintenance'],
   },
   {
     title: 'AI and Automation',
-    description: 'Focused uses of AI and workflow automation that support people rather than obscure how work is done.',
-    items: ['AI opportunity reviews', 'Enquiry assistants', 'Internal knowledge assistants', 'Email and form automation', 'Content workflows', 'Document-processing workflows', 'Practical AI governance support'],
+    description: 'Simple AI tools and automations that reduce repetitive work while keeping people in control.',
+    items: ['AI reviews', 'Enquiry assistants', 'Staff knowledge tools', 'Email automation', 'Form automation', 'Document workflows', 'AI guidance'],
   },
   {
     title: 'Education Technology',
-    description: 'Digital learning tools designed around the practical needs of tutors, learners and education providers.',
-    items: ['Course websites', 'Tutor dashboards', 'Assessments and quizzes', 'Progress tracking', 'Resource libraries', 'Learner portals', 'Education workflow automation'],
-  },
-  {
-    id: 'digital-marketing',
-    title: 'Digital Marketing',
-    description: 'Practical marketing support that strengthens your message, improves visibility and helps turn attention into genuine enquiries.',
-    items: ['Marketing strategy', 'Search engine optimisation', 'Content planning and creation', 'Social media campaigns', 'Email marketing', 'Campaign landing pages', 'Analytics and performance reporting'],
+    description: 'Learning tools that help tutors teach, learners progress and providers stay organised.',
+    items: ['Course websites', 'Tutor dashboards', 'Assessments', 'Progress tracking', 'Resource libraries', 'Learner portals', 'Admin automation'],
   },
   {
     title: 'Digital Consultancy and Training',
-    description: 'Clear advice and hands-on support for organisations making sensible technology decisions.',
-    items: ['Digital strategy', 'AI training', 'Website audits', 'Technology selection', 'Google Workspace support', 'Basic cybersecurity and access reviews', 'Staff training'],
+    description: 'Advice and training to help your team choose and use digital tools with confidence.',
+    items: ['Digital planning', 'AI training', 'Website reviews', 'Content planning', 'Choosing software', 'Google Workspace support', 'Access reviews', 'Staff training'],
   },
 ];
 
 const faqs = [
-  ['What types of organisations do you work with?', 'We primarily support small businesses, tutors, education providers, charities, community organisations and independent professionals.'],
-  ['Can you improve an existing website?', 'Yes. We can review its design, mobile experience, performance, accessibility, content and search visibility.'],
-  ['Do you build AI chatbots?', 'We build practical enquiry and internal knowledge assistants based on approved business information, with clear limitations and human escalation where appropriate.'],
-  ['How much does a project cost?', 'Costs depend on the size and complexity of the work. After an initial discussion, we provide a clear scope and quotation.'],
-  ['Do you provide ongoing support?', 'Yes. Maintenance and technical support can be provided after launch.'],
+  ['Who do you work with?', 'We mainly work with small businesses, education providers, charities and independent professionals.'],
+  ['Can you improve an existing website?', 'Yes. We can improve its design, mobile layout, speed, accessibility, content and search visibility.'],
+  ['Do you build AI assistants?', 'Yes. We build enquiry and staff knowledge assistants using information you approve.'],
+  ['How much does a project cost?', 'The cost depends on the work involved. You will receive a written scope and quote before work starts.'],
+  ['Can you support us after launch?', 'Yes. Ongoing maintenance, training and technical support are available.'],
 ];
 ---
 
-<Layout title="Services | ZakTec Solutions" description="Website development, digital marketing, practical AI automation, education technology and digital consultancy services for growing organisations.">
-  <PageIntro eyebrow="Services" title="Digital services designed around real organisational needs" description="Choose focused support for a new website, stronger marketing, a better workflow, an education platform or a clearer digital plan." />
+<Layout title="Services | ZakTec Solutions" description="Websites, AI, education technology and digital training from ZakTec Solutions.">
+  <PageIntro eyebrow="Services" title="Choose the digital support you need" description="We can help with websites, AI, education systems and digital training." />
 
   <section class="section-space">
     <div class="section-shell grid gap-6 lg:grid-cols-2">
       {services.map((service) => (
-        <article class="surface-card" id={service.id}>
+        <article class="surface-card">
           <h2 class="text-2xl font-bold text-white">{service.title}</h2>
           <p class="mt-3 leading-7 text-muted-foreground">{service.description}</p>
           <ul class="mt-6 grid gap-3 sm:grid-cols-2">
@@ -60,15 +54,15 @@ const faqs = [
 
   <section class="border-y border-white/10 bg-white/[0.025] py-16" aria-labelledby="pricing-title">
     <div class="section-shell">
-      <h2 id="pricing-title" class="section-title">Clear pricing based on your requirements</h2>
-      <p class="section-copy">Smaller, defined services may have starting prices. Larger websites, marketing campaigns, AI systems and automation projects are quoted after an initial discussion.</p>
+      <h2 id="pricing-title" class="section-title">Straightforward pricing</h2>
+      <p class="section-copy">After a short discussion, you will receive a clear scope and quote. Work starts only when you are happy to proceed.</p>
     </div>
   </section>
 
   <section class="section-space" aria-labelledby="faq-title">
     <div class="section-shell max-w-4xl">
       <p class="eyebrow">Frequently asked questions</p>
-      <h2 id="faq-title" class="section-title">Useful answers before we talk</h2>
+      <h2 id="faq-title" class="section-title">Common questions</h2>
       <div class="mt-8 divide-y divide-white/10 border-y border-white/10">
         {faqs.map(([question, answer]) => (
           <details class="group py-5">
