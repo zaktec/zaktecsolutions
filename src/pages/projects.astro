@@ -6,40 +6,54 @@ import CallToAction from '../components/CallToAction.astro';
 
 const projects = [
   {
+    id: 'haibl',
+    name: 'HAiBL',
+    type: 'Custom digital platform',
+    description: 'A developing platform for managing courses, assessments, resources, learner progress and administrative tasks.',
+    demonstratesText: 'Dashboards, user roles, databases, progress tracking and workflow design.',
+    demonstrates: ['Dashboards', 'User roles', 'Progress tracking'],
+    status: 'In development',
+  },
+  {
     id: 'mathstutorhelp',
     name: 'MathsTutorHelp',
-    type: 'ZakTec project',
-    problem: 'Learners need an easy way to find maths tutoring and support.',
-    solution: 'A simple tutoring website with clear learning information.',
-    technologies: ['Responsive website', 'Digital learning content'],
+    type: 'Service website',
+    description: 'A tuition website that provides class information, supports enquiries and gives learners access to online resources.',
+    demonstratesText: 'Clear service content, responsive design and enquiry management.',
+    demonstrates: ['Service website', 'Enquiries', 'Education'],
   },
   {
     id: 'tabletop-learning',
     name: 'TableTopLearning',
-    type: 'ZakTec project',
-    problem: 'Tutors need one place to share courses and support learners.',
-    solution: 'An easy-to-maintain course and tutor-support website.',
-    technologies: ['Astro', 'Static site architecture'],
+    type: 'Course website',
+    description: 'A structured course website presenting learning programmes, tutor support and clear learner pathways.',
+    demonstratesText: 'Course organisation, content strategy and accessible design.',
+    demonstrates: ['Course website', 'Learning content', 'Tutor support'],
   },
   {
-    id: 'haibl',
-    name: 'HAiBL',
-    type: 'ZakTec project',
-    problem: 'Education providers need connected course and assessment tools.',
-    solution: 'A platform for courses, assessments, progress and tutor tasks.',
-    technologies: ['Next.js', 'React', 'PostgreSQL', 'TypeScript'],
+    id: 'connectmuslim',
+    name: 'ConnectMuslim',
+    type: 'Community platform',
+    description: 'A developing platform for sharing information, supporting participation and connecting community services.',
+    demonstratesText: 'Community-focused design, information structure and platform planning.',
+    demonstrates: ['Community design', 'Information sharing', 'Platform planning'],
+    status: 'In development',
   },
 ];
 ---
 
-<Layout title="Projects | ZakTec Solutions" description="Selected ZakTec Solutions projects across tutoring, online courses and education technology.">
-  <PageIntro eyebrow="Projects" title="Selected Digital Projects" description="Examples of websites and learning systems built by ZakTec Solutions." />
+<Layout title="Projects | ZakTec Solutions" description="Selected ZakTec Solutions websites, platforms and digital systems developed around real user needs.">
+  <PageIntro eyebrow="Selected projects" title="Digital projects developed around real needs" description="Examples of websites and platforms created to support learning, services and organisational workflows." />
 
-  <section class="section-space">
-    <div class="section-shell grid gap-6 lg:grid-cols-3">
-      {projects.map((project) => <ProjectCard {...project} />)}
+  <section class="section-space" aria-labelledby="project-list-title">
+    <div class="section-shell">
+      <h2 id="project-list-title" class="sr-only">Project details</h2>
+      <div class="grid gap-6 lg:grid-cols-2">
+        {projects.map((project) => <ProjectCard {...project} />)}
+      </div>
+      <p class="mt-8 text-sm leading-6 text-muted-foreground">Public project links will be added when the current destinations and release status have been confirmed.</p>
     </div>
   </section>
 
-  <CallToAction title="Have a similar project in mind?" description="Tell us who it is for and what it needs to achieve." />
+  <CallToAction title="Have a similar project in mind?" description="Tell us who the service is for and what people need to achieve." />
 </Layout>

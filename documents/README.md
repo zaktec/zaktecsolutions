@@ -1,18 +1,23 @@
-# ZakTec Solutions Project Documents
+# ZakTec Solutions Documentation
 
-These files provide the context needed to understand and safely edit the ZakTec Solutions website.
+The active documentation is divided by audience and purpose.
 
-## Files
+## Technical AI Document
 
-- `branding.md` — official name, visual identity, voice and content rules.
-- `chatgpt-project-instructions.md` — complete project context, architecture, routes, editing constraints and validation steps.
+[`technical-ai-document.md`](technical-ai-document.md)
 
-## Using these files with ChatGPT
+For developers and AI coding tools. It covers the current architecture, routes, features, roles, data flow, integrations, requirements, coding standards, validation and development rules.
 
-Upload both Markdown files at the start of a new chat. Then provide the specific change you want.
+## Human-Friendly Website Guide
 
-Suggested opening message:
+[`human-friendly-web-app-guide.md`](human-friendly-web-app-guide.md)
 
-> Read both attached files before making recommendations. Treat `chatgpt-project-instructions.md` as the technical source of truth and `branding.md` as the brand and content source of truth. Preserve the existing design and make only the changes I request.
+For clients, visitors and non-technical stakeholders. It explains what the website does, who it is for, how people use it and what is not currently provided.
 
-The files describe the project but do not contain passwords, tokens or other secrets.
+## Brand Guidelines
+
+[`branding.md`](branding.md)
+
+For anyone creating website content, interface designs, social posts or marketing materials. It defines the official name, positioning, visual identity, tone, messages, examples and accessibility requirements.
+
+Read only the document relevant to the task, then consult another document when its subject directly affects the work. Git history should be used when an older version is needed.

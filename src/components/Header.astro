@@ -3,7 +3,10 @@ import { withBase } from '../lib/utils';
 import Logo from './Logo.astro';
 
 const navigation = [
-  { label: 'Services', path: '/services' },
+  { label: 'Home', path: '/' },
+  { label: 'AI Consultancy', path: '/ai-solutions' },
+  { label: 'Digital Systems', path: '/digital-solutions' },
+  { label: 'Websites', path: '/web-development' },
   { label: 'Projects', path: '/projects' },
   { label: 'About', path: '/about' },
   { label: 'Contact', path: '/contact' },
@@ -20,8 +23,8 @@ const isCurrent = (path: string) => path === '/' ? currentPath === '/' : current
       <Logo compact />
     </a>
 
-    <nav class="hidden md:block" aria-label="Primary navigation">
-      <ul class="flex items-center gap-5">
+    <nav class="hidden lg:block" aria-label="Primary navigation">
+      <ul class="flex items-center gap-4">
         {navigation.map((item) => (
           <li>
             <a
@@ -36,7 +39,7 @@ const isCurrent = (path: string) => path === '/' ? currentPath === '/' : current
       </ul>
     </nav>
 
-    <details class="group relative md:hidden">
+    <details class="group relative lg:hidden">
       <summary class="inline-flex min-h-11 cursor-pointer list-none items-center rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-purple-400 hover:bg-purple-500/10 [&::-webkit-details-marker]:hidden" aria-label="Open primary navigation">
         Menu
       </summary>

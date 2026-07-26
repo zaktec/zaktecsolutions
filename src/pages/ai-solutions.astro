@@ -3,27 +3,37 @@ import Layout from '../layouts/main.astro';
 import PageIntro from '../components/PageIntro.astro';
 import CallToAction from '../components/CallToAction.astro';
 
-const outcomes = [
-  ['Save admin time', 'Automate repeat tasks where it makes sense.'],
-  ['Answer common questions', 'Help people find approved information and contact a person when needed.'],
-  ['Find information faster', 'Make policies, guidance and staff knowledge easier to search.'],
-  ['Support content work', 'Help with first drafts, summaries and reviews.'],
-  ['Connect your tools', 'Link forms, email, calendars and spreadsheets.'],
-  ['Train your team', 'Show staff how to use AI safely and confidently.'],
+const challenges = [
+  ['Repetitive administration', 'Routine copying, checking, sorting and drafting can take staff away from higher-value work.'],
+  ['Difficult-to-find information', 'Policies, guidance and operational knowledge may be spread across documents and systems.'],
+  ['Repeated enquiries', 'Teams may spend time answering the same questions or directing people to existing information.'],
+];
+
+const services = [
+  ['AI opportunity assessment', 'Review workflows, information, users and risks to identify where AI may offer a clear benefit.'],
+  ['Workflow automation', 'Connect approved tools and automate suitable steps while keeping checks and human oversight in place.'],
+  ['Knowledge and enquiry assistants', 'Help staff or service users find approved information and reach a person when needed.'],
+  ['Document and content workflows', 'Support structured drafting, summaries, classification and review using agreed source material.'],
+];
+
+const process = [
+  ['Understand', 'Define the current process, intended outcome and people affected.'],
+  ['Assess', 'Review information quality, privacy, security, accessibility and operational risk.'],
+  ['Test', 'Use a focused prototype to check usefulness before wider investment.'],
+  ['Introduce', 'Agree controls, documentation, staff training and ongoing review.'],
 ];
 ---
 
-<Layout title="AI and Automation | ZakTec Solutions" description="AI assistants, automation and staff training for smaller teams.">
-  <PageIntro eyebrow="AI solutions" title="AI Tools That Make Everyday Work Easier" description="Use AI to reduce admin, answer common questions and organise information while your team stays in control." />
+<Layout title="AI Consultancy and Automation | ZakTec Solutions" description="Practical AI consultancy, workflow automation, staff training and responsible AI guidance for UK businesses and organisations.">
+  <PageIntro eyebrow="AI and automation" title="AI and automation that solve practical problems" description="We help organisations reduce repetitive work, find information more easily and use AI responsibly." />
 
-  <section class="section-space" aria-labelledby="outcomes-title">
+  <section class="section-space" aria-labelledby="challenges-title">
     <div class="section-shell">
-      <p class="eyebrow">How AI can help</p>
-      <h2 id="outcomes-title" class="section-title">Start with a task you want to improve</h2>
-      <p class="section-copy">We look at the task, the information involved and any risks before suggesting a solution.</p>
-      <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {outcomes.map(([title, description]) => (
-          <article class="surface-card">
+      <p class="eyebrow">Common challenges</p>
+      <h2 id="challenges-title" class="section-title">Start with the work that needs to improve</h2>
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        {challenges.map(([title, description]) => (
+          <article class="surface-card h-full">
             <h3 class="text-lg font-semibold text-white">{title}</h3>
             <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
           </article>
@@ -32,29 +42,72 @@ const outcomes = [
     </div>
   </section>
 
-  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="responsible-title">
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="assessment-title">
     <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
       <div>
-        <p class="eyebrow">Safe use</p>
-        <h2 id="responsible-title" class="section-title">People stay in control</h2>
+        <p class="eyebrow">Opportunity assessment</p>
+        <h2 id="assessment-title" class="section-title">Assess the operational need first</h2>
       </div>
-      <ul class="grid gap-4 sm:grid-cols-2">
-        <li class="surface-card">Check AI output before using or sharing it.</li>
-        <li class="surface-card">Use sensitive data only in approved systems.</li>
-        <li class="surface-card">Keep people responsible for important decisions.</li>
-        <li class="surface-card">Always provide a route to human support.</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section-space" aria-labelledby="approach-title">
-    <div class="section-shell max-w-4xl">
-      <h2 id="approach-title" class="section-title">Test the idea before investing more</h2>
       <div class="content-page">
-        <p>We first review the current process and agree what should improve. A small prototype can then show whether the idea is useful before a larger system is built.</p>
+        <p>AI is not the right solution for every process. We assess the operational need first and recommend AI only where it offers a clear and manageable benefit.</p>
+        <p>The assessment considers the task, source information, users, existing tools, data protection, security, accuracy requirements and need for human review.</p>
       </div>
     </div>
   </section>
 
-  <CallToAction title="Could AI save your team time?" description="Tell us which task takes too long, and we’ll help you assess the options." />
+  <section class="section-space" aria-labelledby="services-title">
+    <div class="section-shell">
+      <p class="eyebrow">Consultancy and delivery</p>
+      <h2 id="services-title" class="section-title">Practical ways we can help</h2>
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        {services.map(([title, description]) => (
+          <article class="surface-card h-full">
+            <h3 class="text-xl font-semibold text-white">{title}</h3>
+            <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="training-title">
+    <div class="section-shell grid gap-10 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow">Staff training</p>
+        <h2 id="training-title" class="section-title">Responsible and confident use</h2>
+        <p class="section-copy">Training can cover appropriate use, checking output, handling sensitive information, approved tools, prompt design and when staff should rely on established processes instead.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Human oversight</p>
+        <h2 class="section-title">People remain accountable</h2>
+        <p class="section-copy">AI output can be inaccurate or incomplete. Important decisions, published information and service outcomes need suitable human review and a clear route to support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="process-title">
+    <div class="section-shell">
+      <p class="eyebrow">Our process</p>
+      <h2 id="process-title" class="section-title">A manageable route from assessment to use</h2>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {process.map(([title, description], index) => (
+          <article class="surface-card h-full">
+            <p class="text-sm font-semibold text-purple-300">{index + 1}</p>
+            <h3 class="mt-2 text-lg font-semibold text-white">{title}</h3>
+            <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="requirements-title">
+    <div class="section-shell max-w-4xl">
+      <p class="eyebrow">Limitations and requirements</p>
+      <h2 id="requirements-title" class="section-title">What a workable solution depends on</h2>
+      <p class="section-copy">Useful AI requires clear objectives, appropriate source information, approved systems, staff involvement and ongoing checks. Some processes are better improved through simpler automation, clearer information or changes to the existing workflow.</p>
+    </div>
+  </section>
+
+  <CallToAction title="Could AI improve a process in your organisation?" description="Tell us which task takes too long or creates difficulty, and we will help you assess the options." buttonLabel="Ask About AI and Automation" />
 </Layout>

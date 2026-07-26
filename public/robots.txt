@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zaktec.github.io/zaktecsolutions/sitemap-index.xml
+Sitemap: https://zaktecsolutions.com/sitemap-index.xml

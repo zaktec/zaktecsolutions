@@ -5,26 +5,73 @@ import ProjectCard from '../components/ProjectCard.astro';
 import CallToAction from '../components/CallToAction.astro';
 import { withBase } from '../lib/utils';
 
+const problems = [
+  ['Repetitive Administration', 'Manual tasks can waste time and create unnecessary duplication.'],
+  ['Disconnected Information', 'Important information may be spread across emails, documents and different systems.'],
+  ['Slow Customer Enquiries', 'Unclear enquiry processes can create extra work for staff and frustration for customers.'],
+  ['Outdated Online Services', 'Websites and systems may no longer support the organisation effectively.'],
+];
+
 const audiences = [
-  'Small businesses',
-  'Tutors and education providers',
+  'Small and medium-sized businesses',
   'Charities and community organisations',
-  'Independent professionals',
+  'Education and training providers',
+  'Professional service businesses',
+  'Public-sector organisations',
+];
+
+const projects = [
+  {
+    name: 'HAiBL',
+    type: 'Custom digital platform',
+    description: 'A developing platform for managing courses, assessments, resources, learner progress and administrative tasks.',
+    demonstratesText: 'Dashboards, user roles, databases, progress tracking and workflow design.',
+    demonstrates: ['Dashboards', 'User roles', 'Progress tracking'],
+    status: 'In development',
+    path: '/projects#haibl',
+    linkLabel: 'View HAiBL',
+  },
+  {
+    name: 'MathsTutorHelp',
+    type: 'Service website',
+    description: 'A tuition website that provides class information, supports enquiries and gives learners access to online resources.',
+    demonstratesText: 'Clear service content, responsive design and enquiry management.',
+    demonstrates: ['Service website', 'Enquiries', 'Education'],
+    path: '/projects#mathstutorhelp',
+    linkLabel: 'View MathsTutorHelp',
+  },
+  {
+    name: 'TableTopLearning',
+    type: 'Course website',
+    description: 'A structured course website presenting learning programmes, tutor support and clear learner pathways.',
+    demonstratesText: 'Course organisation, content strategy and accessible design.',
+    demonstrates: ['Course website', 'Learning content', 'Tutor support'],
+    path: '/projects#tabletop-learning',
+    linkLabel: 'View TableTopLearning',
+  },
+  {
+    name: 'ConnectMuslim',
+    type: 'Community platform',
+    description: 'A developing platform for sharing information, supporting participation and connecting community services.',
+    demonstratesText: 'Community-focused design, information structure and platform planning.',
+    demonstrates: ['Community design', 'Information sharing', 'Platform planning'],
+    status: 'In development',
+    path: '/projects#connectmuslim',
+    linkLabel: 'View ConnectMuslim',
+  },
 ];
 
 const steps = [
-  ['1. Discuss', 'We listen to what you need and what is not working.'],
-  ['2. Plan', 'We agree the solution, scope, timescale and cost.'],
-  ['3. Build', 'We design, build and test your website or system.'],
-  ['4. Support', 'We help with launch, training and ongoing maintenance.'],
+  ['1. Understand', 'We learn about your organisation, users, current systems and challenges.'],
+  ['2. Assess and Plan', 'We identify suitable improvements and agree the scope, priorities and next steps.'],
+  ['3. Deliver', 'We build or configure the solution and test it with the people who will use it.'],
+  ['4. Support', 'We provide documentation, training and ongoing technical support where required.'],
 ];
 
-const reasons = [
-  'Simple solutions that fit your needs',
-  'Clear scope, timescale and pricing',
-  'Experience in websites, AI and education',
-  'Accessible and easy-to-maintain systems',
-  'Support when you need it',
+const approachPoints = [
+  'Clear recommendations',
+  'Responsible use of AI',
+  'Practical implementation',
 ];
 ---
 
@@ -32,39 +79,73 @@ const reasons = [
   <section class="relative overflow-hidden border-b border-white/10 py-16 sm:py-20 md:py-28">
     <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(139,92,246,0.18),transparent_42%)]"></div>
     <div class="section-shell">
-      <p class="eyebrow">UK-based AI, web and digital consultancy</p>
+      <p class="eyebrow">UK AI and digital consultancy</p>
       <h1 class="max-w-5xl text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl lg:text-7xl">
-        AI, Web and Digital Solutions for Growing Organisations
+        Practical AI, digital systems and websites
       </h1>
       <p class="mt-6 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 md:text-xl">
-        ZakTec Solutions creates professional websites, practical AI tools and digital systems that help organisations save time, improve communication and work more effectively.
+        ZakTec Solutions helps businesses and organisations use technology more effectively. We provide AI consultancy, automation, digital systems and professional websites designed to save time and improve services.
       </p>
       <div class="mt-9 flex flex-col gap-4 sm:flex-row">
         <a class="button-primary" href={withBase('/contact')}>Discuss Your Project</a>
-        <a class="button-secondary" href={withBase('/services')}>View Our Services</a>
+        <a class="button-secondary" href={withBase('/services')}>Explore Our Services</a>
       </div>
     </div>
   </section>
 
-  <section class="section-space" aria-labelledby="core-services-title">
+  <section class="section-space" aria-labelledby="problems-title">
+    <div class="section-shell">
+      <p class="eyebrow">How we can help</p>
+      <h2 id="problems-title" class="section-title">Where could technology improve your organisation?</h2>
+      <p class="section-copy">We help organisations reduce repetitive work, manage information more effectively and improve their online services.</p>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {problems.map(([title, description]) => (
+          <article class="surface-card h-full">
+            <h3 class="text-lg font-semibold text-white">{title}</h3>
+            <p class="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="services-title">
     <div class="section-shell">
       <p class="eyebrow">Core services</p>
-      <h2 id="core-services-title" class="section-title">Digital support for your next step</h2>
-      <p class="section-copy">Choose the service that best matches what you want to improve.</p>
-      <div class="mt-9 grid gap-5 md:grid-cols-3">
-        <ServiceCard title="Business Websites" description="Fast, accessible websites that explain your work and help people contact you." path="/web-development" linkLabel="Explore web development" />
-        <ServiceCard title="AI and Automation" description="AI assistants and automations that reduce admin and speed up routine work." path="/ai-solutions" linkLabel="Explore AI solutions" />
-        <ServiceCard title="Education Technology" description="Course websites and learning tools for tutors, learners and education providers." path="/education-technology" linkLabel="Explore education technology" />
+      <h2 id="services-title" class="section-title">Digital services built around your organisation</h2>
+      <p class="section-copy">We assess what you need, recommend an appropriate solution and help you introduce it in a manageable way.</p>
+      <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        <ServiceCard
+          title="AI Consultancy and Automation"
+          description="Use AI to reduce repetitive work, organise information and support staff more effectively."
+          examples={['AI opportunity assessments', 'Workflow automation', 'Enquiry assistants', 'Internal knowledge tools', 'Staff AI guidance']}
+          path="/ai-solutions"
+          linkLabel="Explore AI Consultancy"
+        />
+        <ServiceCard
+          title="Digital Systems"
+          description="Practical platforms and workflows designed to improve how your organisation manages information and delivers services."
+          examples={['Dashboards', 'Digital forms', 'Booking systems', 'Client or member portals', 'Reporting tools']}
+          path="/digital-solutions"
+          linkLabel="Explore Digital Systems"
+        />
+        <ServiceCard
+          title="Websites and Online Services"
+          description="Professional, responsive websites that explain your services clearly and help visitors take the next step."
+          examples={['Business websites', 'Charity websites', 'Website redesigns', 'Enquiry forms', 'SEO and performance improvements']}
+          path="/web-development"
+          linkLabel="Explore Website Services"
+        />
       </div>
     </div>
   </section>
 
-  <section class="border-y border-white/10 bg-white/[0.025] py-12 md:py-16" aria-labelledby="audiences-title">
-    <div class="section-shell grid gap-7 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+  <section class="section-space" aria-labelledby="audiences-title">
+    <div class="section-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
       <div>
         <p class="eyebrow">Who we help</p>
-        <h2 id="audiences-title" class="section-title">Who we work with</h2>
-        <p class="section-copy">We support smaller teams that want straightforward digital help.</p>
+        <h2 id="audiences-title" class="section-title">Support for businesses and organisations</h2>
+        <p class="section-copy">Our services are suitable for organisations that need clear, reliable digital improvements without unnecessary complexity.</p>
       </div>
       <ul class="grid gap-x-8 gap-y-2 sm:grid-cols-2">
         {audiences.map((audience) => (
@@ -77,55 +158,52 @@ const reasons = [
     </div>
   </section>
 
-  <section class="section-space" aria-labelledby="projects-title">
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="projects-title">
     <div class="section-shell">
       <p class="eyebrow">Selected projects</p>
       <div class="flex flex-col justify-between gap-4 md:flex-row md:items-end">
         <div>
-          <h2 id="projects-title" class="section-title">Digital products built for real needs</h2>
-          <p class="section-copy">Examples of websites and learning systems built by ZakTec Solutions.</p>
+          <h2 id="projects-title" class="section-title">Digital projects developed around real needs</h2>
+          <p class="section-copy">Examples of websites and platforms created to support learning, services and organisational workflows.</p>
         </div>
         <a class="text-link min-h-11" href={withBase('/projects')}>View all project details <span aria-hidden="true">&nbsp;→</span></a>
       </div>
-      <div class="mt-10 grid gap-6 lg:grid-cols-3">
-        <ProjectCard name="MathsTutorHelp" type="ZakTec project" problem="Learners need an easy way to find maths tutoring and support." solution="A simple tutoring website with clear learning information." technologies={['Responsive website', 'Digital learning content']} path="/projects#mathstutorhelp" />
-        <ProjectCard name="TableTopLearning" type="ZakTec project" problem="Tutors need one place to share courses and support learners." solution="An easy-to-maintain course and tutor-support website." technologies={['Astro', 'Static site architecture']} path="/projects#tabletop-learning" />
-        <ProjectCard name="HAiBL" type="ZakTec project" problem="Education providers need connected course and assessment tools." solution="A platform for courses, assessments, progress and tutor tasks." technologies={['Next.js', 'React', 'PostgreSQL', 'TypeScript']} path="/projects#haibl" />
+      <div class="mt-10 grid gap-6 lg:grid-cols-2">
+        {projects.map((project) => <ProjectCard {...project} />)}
       </div>
     </div>
   </section>
 
-  <section class="border-y border-white/10 bg-white/[0.025] py-12 md:py-20" aria-labelledby="process-title">
+  <section class="section-space" aria-labelledby="process-title">
     <div class="section-shell">
       <p class="eyebrow">How we work</p>
-      <h2 id="process-title" class="section-title">From first conversation to launch</h2>
+      <h2 id="process-title" class="section-title">A clear process from assessment to delivery</h2>
       <div class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map(([title, description]) => (
-          <article class="surface-card p-5">
+          <article class="surface-card h-full p-5">
             <h3 class="text-lg font-semibold text-white">{title}</h3>
-            <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
+            <p class="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{description}</p>
           </article>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section-space" aria-labelledby="why-zaktec-title">
-    <div class="section-shell grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="approach-title">
+    <div class="section-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
       <div>
-        <p class="eyebrow">Why choose us</p>
-        <h2 id="why-zaktec-title" class="section-title">Why ZakTec Solutions</h2>
+        <p class="eyebrow">Our approach</p>
+        <h2 id="approach-title" class="section-title">AI should solve a real problem</h2>
+        <p class="section-copy">AI is not appropriate for every task. We recommend it only where it can provide a clear benefit, with appropriate attention to data protection, security, accessibility and human oversight.</p>
       </div>
-      <ul class="grid gap-x-8 gap-y-2 sm:grid-cols-2">
-        {reasons.map((reason) => (
-          <li class="flex gap-3 border-b border-white/10 py-3 text-slate-200">
-            <span class="mt-1 text-purple-300" aria-hidden="true">◆</span>
-            <span>{reason}</span>
-          </li>
-        ))}
+      <ul class="grid gap-4">
+        {approachPoints.map((point) => <li class="surface-card font-medium text-slate-200">{point}</li>)}
       </ul>
     </div>
   </section>
 
-  <CallToAction />
+  <CallToAction
+    title="Could technology improve how your organisation works?"
+    description="Tell us about the process, website or system you want to improve. We will review your requirements and recommend a practical next step."
+  />
 </Layout>

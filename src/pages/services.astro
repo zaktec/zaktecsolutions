@@ -2,60 +2,76 @@
 import Layout from '../layouts/main.astro';
 import PageIntro from '../components/PageIntro.astro';
 import CallToAction from '../components/CallToAction.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { withBase } from '../lib/utils';
 
 const services = [
   {
-    title: 'Business Websites',
-    description: 'Websites that look professional, work on every device and are easy to update.',
-    items: ['New websites', 'Website redesigns', 'Mobile improvements', 'Accessibility', 'Speed improvements', 'SEO basics', 'Maintenance'],
+    title: 'AI Consultancy and Automation',
+    description: 'Use AI to reduce repetitive work, organise information and support staff more effectively.',
+    examples: ['AI opportunity assessments', 'Workflow automation', 'Enquiry assistants', 'Internal knowledge tools', 'Staff AI guidance'],
+    path: '/ai-solutions',
+    linkLabel: 'Explore AI Consultancy',
   },
   {
-    title: 'AI and Automation',
-    description: 'Simple AI tools and automations that reduce repetitive work while keeping people in control.',
-    items: ['AI reviews', 'Enquiry assistants', 'Staff knowledge tools', 'Email automation', 'Form automation', 'Document workflows', 'AI guidance'],
+    title: 'Digital Systems',
+    description: 'Practical platforms and workflows designed to improve how your organisation manages information and delivers services.',
+    examples: ['Dashboards', 'Digital forms', 'Booking systems', 'Client or member portals', 'Reporting tools'],
+    path: '/digital-solutions',
+    linkLabel: 'Explore Digital Systems',
   },
   {
-    title: 'Education Technology',
-    description: 'Learning tools that help tutors teach, learners progress and providers stay organised.',
-    items: ['Course websites', 'Tutor dashboards', 'Assessments', 'Progress tracking', 'Resource libraries', 'Learner portals', 'Admin automation'],
-  },
-  {
-    title: 'Digital Consultancy and Training',
-    description: 'Advice and training to help your team choose and use digital tools with confidence.',
-    items: ['Digital planning', 'AI training', 'Website reviews', 'Content planning', 'Choosing software', 'Google Workspace support', 'Access reviews', 'Staff training'],
+    title: 'Websites and Online Services',
+    description: 'Professional, responsive websites that explain your services clearly and help visitors take the next step.',
+    examples: ['Business websites', 'Charity websites', 'Website redesigns', 'Enquiry forms', 'SEO and performance improvements'],
+    path: '/web-development',
+    linkLabel: 'Explore Website Services',
   },
 ];
 
 const faqs = [
-  ['Who do you work with?', 'We mainly work with small businesses, education providers, charities and independent professionals.'],
-  ['Can you improve an existing website?', 'Yes. We can improve its design, mobile layout, speed, accessibility, content and search visibility.'],
-  ['Do you build AI assistants?', 'Yes. We build enquiry and staff knowledge assistants using information you approve.'],
-  ['How much does a project cost?', 'The cost depends on the work involved. You will receive a written scope and quote before work starts.'],
-  ['Can you support us after launch?', 'Yes. Ongoing maintenance, training and technical support are available.'],
+  ['Who do you work with?', 'We work with businesses, charities, community organisations, education providers, professional services and public-sector organisations.'],
+  ['Do we need to know which technology we need?', 'No. Start with the service, process or problem you want to improve. We will assess the need before recommending an approach.'],
+  ['Can you improve an existing system or website?', 'Yes. We can review what already works and recommend focused improvements before considering a replacement.'],
+  ['How much does a project cost?', 'Cost depends on the requirements. You will receive a written scope and quote before work starts.'],
+  ['Can you provide support after delivery?', 'Yes. Documentation, training, maintenance and technical support can be included where required.'],
 ];
 ---
 
-<Layout title="Services | ZakTec Solutions" description="Websites, AI, education technology and digital training from ZakTec Solutions.">
-  <PageIntro eyebrow="Services" title="Choose the digital support you need" description="We can help with websites, AI, education systems and digital training." />
+<Layout title="Services | ZakTec Solutions" description="AI consultancy, digital systems, websites, automation and training for businesses and organisations across the UK.">
+  <PageIntro eyebrow="Services" title="Three practical ways to improve your organisation" description="Start with the work you want to improve. We will help you choose an appropriate next step." />
 
-  <section class="section-space">
-    <div class="section-shell grid gap-6 lg:grid-cols-2">
-      {services.map((service) => (
-        <article class="surface-card">
-          <h2 class="text-2xl font-bold text-white">{service.title}</h2>
-          <p class="mt-3 leading-7 text-muted-foreground">{service.description}</p>
-          <ul class="mt-6 grid gap-3 sm:grid-cols-2">
-            {service.items.map((item) => <li class="flex gap-3 text-sm leading-6 text-slate-300"><span class="text-purple-300" aria-hidden="true">•</span>{item}</li>)}
-          </ul>
-        </article>
-      ))}
+  <section class="section-space" aria-labelledby="services-title">
+    <div class="section-shell">
+      <h2 id="services-title" class="sr-only">Our services</h2>
+      <div class="grid gap-6 lg:grid-cols-3">
+        {services.map((service) => (
+          <div class="h-full">
+            <ServiceCard {...service} />
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
-  <section class="border-y border-white/10 bg-white/[0.025] py-16" aria-labelledby="pricing-title">
-    <div class="section-shell">
-      <h2 id="pricing-title" class="section-title">Straightforward pricing</h2>
-      <p class="section-copy">After a short discussion, you will receive a clear scope and quote. Work starts only when you are happy to proceed.</p>
+  <section id="training" class="scroll-mt-28 border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="training-title">
+    <div class="section-shell grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+      <div>
+        <p class="eyebrow">Training and support</p>
+        <h2 id="training-title" class="section-title">Help your staff use technology with confidence</h2>
+      </div>
+      <div>
+        <p class="section-copy mt-0">Training is available as part of our AI and digital consultancy work. It can cover responsible AI use, checking AI output, handling information, choosing appropriate tools and improving everyday workflows.</p>
+        <a class="text-link mt-6 min-h-11" href={withBase('/contact')}>Ask About Training</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="starting-title">
+    <div class="section-shell max-w-4xl">
+      <p class="eyebrow">A practical starting point</p>
+      <h2 id="starting-title" class="section-title">Begin with the organisational need</h2>
+      <p class="section-copy">We review the current process, the people involved, available information and relevant risks. You then receive a clear recommendation, scope and cost before deciding whether to proceed.</p>
     </div>
   </section>
 

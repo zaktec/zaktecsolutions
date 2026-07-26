@@ -3,42 +3,58 @@ import Layout from '../layouts/main.astro';
 import PageIntro from '../components/PageIntro.astro';
 import CallToAction from '../components/CallToAction.astro';
 
-const capabilities = ['Mobile-first design', 'Responsive layouts', 'Accessibility', 'Fast loading', 'SEO foundations', 'Clear content structure', 'Contact and enquiry systems', 'Easy maintenance', 'Secure deployment'];
+const services = [
+  ['New business websites', 'Clear, professional websites aligned with your current services and customer needs.'],
+  ['Charity and community websites', 'Accessible information, service details and suitable routes for participation or support.'],
+  ['Website redesign', 'Focused improvements to structure, content, usability and visual consistency.'],
+  ['Service and landing pages', 'Clear journeys for specific audiences, campaigns or services.'],
+  ['Enquiry and booking journeys', 'Forms and steps that help people provide the right information or arrange a service.'],
+  ['Performance improvement', 'Reduce avoidable page weight and improve loading across devices.'],
+  ['Basic SEO setup', 'Useful titles, descriptions, structure, indexing controls and technical foundations.'],
+  ['Maintenance and support', 'Updates, monitoring and practical help after launch where required.'],
+];
 ---
 
-<Layout title="Web Development | ZakTec Solutions" description="Fast, accessible websites that are easy to use and manage.">
-  <PageIntro eyebrow="Web development" title="A Website That Is Easy to Use and Manage" description="Your website should explain what you do, work on every device and make it easy to contact you." />
+<Layout title="Website Services | ZakTec Solutions" description="Accessible, responsive websites and online services for UK businesses, charities and organisations.">
+  <PageIntro eyebrow="Websites" title="Clear websites that help people take the next step" description="We create accessible, responsive websites that explain your services and make it easy for visitors to find information or contact you." />
 
-  <section class="section-space" aria-labelledby="website-principles-title">
-    <div class="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-      <div>
-        <p class="eyebrow">What you get</p>
-        <h2 id="website-principles-title" class="section-title">Everything a good business website needs</h2>
-        <p class="section-copy">We focus on useful features and leave out anything you do not need.</p>
+  <section class="section-space" aria-labelledby="services-title">
+    <div class="section-shell">
+      <p class="eyebrow">Website services</p>
+      <h2 id="services-title" class="section-title">Create, improve and maintain your online service</h2>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {services.map(([title, description]) => (
+          <article class="surface-card h-full">
+            <h3 class="text-lg font-semibold text-white">{title}</h3>
+            <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
+          </article>
+        ))}
       </div>
-      <ul class="grid gap-4 sm:grid-cols-2">
-        {capabilities.map((capability) => <li class="surface-card font-medium text-slate-200">{capability}</li>)}
-      </ul>
     </div>
   </section>
 
-  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="static-title">
-    <div class="section-shell max-w-4xl">
-      <p class="eyebrow">Simple by design</p>
-      <h2 id="static-title" class="section-title">A simple website may be all you need</h2>
-      <div class="content-page">
-        <p>Many businesses only need clear information and a reliable contact route. This type of website is fast, secure and inexpensive to host.</p>
-        <p>We add accounts, payments or other advanced features only when they serve a real purpose.</p>
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="principles-title">
+    <div class="section-shell grid gap-10 lg:grid-cols-2">
+      <div>
+        <p class="eyebrow">Built for users</p>
+        <h2 id="principles-title" class="section-title">Clear information and accessible journeys</h2>
+        <p class="section-copy">We organise content around what visitors need to understand and do. Responsive layouts, readable content, keyboard access and clear next steps are considered throughout delivery.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Appropriate technology</p>
+        <h2 class="section-title">Only the features your service needs</h2>
+        <p class="section-copy">Many organisations need a reliable information website and enquiry route. Accounts, payments, bookings or custom features are added only when they support a clear requirement.</p>
       </div>
     </div>
   </section>
 
   <section class="section-space" aria-labelledby="existing-title">
-    <div class="section-shell">
-      <h2 id="existing-title" class="section-title">Already have a website?</h2>
-      <p class="section-copy">We can improve its mobile layout, accessibility, speed, content and search visibility without rebuilding everything.</p>
+    <div class="section-shell max-w-4xl">
+      <p class="eyebrow">Existing websites</p>
+      <h2 id="existing-title" class="section-title">Improve what already works</h2>
+      <p class="section-copy">A full rebuild is not always necessary. We can review mobile usability, accessibility, performance, content structure, basic SEO and enquiry journeys, then prioritise useful improvements.</p>
     </div>
   </section>
 
-  <CallToAction title="Need a new or improved website?" description="Tell us what you want the website to do for your business." />
+  <CallToAction title="Do you need a new or improved website?" description="Tell us about your organisation, your users and what the website needs to help them do." buttonLabel="Discuss Your Website" />
 </Layout>

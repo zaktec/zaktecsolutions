@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/main.astro';
+import PageIntro from '../components/PageIntro.astro';
+import CallToAction from '../components/CallToAction.astro';
+
+const capabilities = [
+  ['Dashboards', 'Bring useful operational information into one clear view.'],
+  ['Client and member portals', 'Give approved users a structured way to access information and services.'],
+  ['Booking systems', 'Support appointments, availability, confirmations and relevant administration.'],
+  ['Digital forms', 'Collect consistent information and route it to the right process.'],
+  ['Reporting tools', 'Make operational information easier to review and share.'],
+  ['Workflow automation', 'Reduce suitable manual steps between systems and teams.'],
+  ['Progress tracking', 'Record activities, milestones, outcomes or learner progress.'],
+  ['Integrations', 'Connect existing tools where appropriate and technically supported.'],
+];
+
+const steps = [
+  ['Understand', 'Map the users, information, decisions and current workflow.'],
+  ['Plan', 'Define the smallest useful system, requirements, risks and delivery stages.'],
+  ['Build and test', 'Develop the agreed features and test them with representative users.'],
+  ['Introduce and support', 'Provide documentation, training and ongoing support where required.'],
+];
+---
+
+<Layout title="Digital Systems | ZakTec Solutions" description="Practical dashboards, portals, forms, booking systems and workflow automation designed around UK organisations.">
+  <PageIntro eyebrow="Digital systems" title="Digital systems that make work easier to manage" description="We create practical forms, dashboards, portals and workflows that help organisations manage information and deliver services." />
+
+  <section class="section-space" aria-labelledby="capabilities-title">
+    <div class="section-shell">
+      <p class="eyebrow">What we develop</p>
+      <h2 id="capabilities-title" class="section-title">Tools that support everyday services</h2>
+      <p class="section-copy">The right solution may be a focused form or dashboard, an integration between existing tools, or a custom digital platform.</p>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {capabilities.map(([title, description]) => (
+          <article class="surface-card h-full">
+            <h3 class="text-lg font-semibold text-white">{title}</h3>
+            <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-white/10 bg-white/[0.025] py-16 md:py-20" aria-labelledby="approach-title">
+    <div class="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <div>
+        <p class="eyebrow">Designed around your work</p>
+        <h2 id="approach-title" class="section-title">Improve the process, not just the interface</h2>
+      </div>
+      <div class="content-page">
+        <p>We review how information is collected, who needs access, where decisions are made and which existing tools should remain in place.</p>
+        <p>Recommendations consider accessibility, data protection, security, maintenance and the practical capacity of your organisation.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space" aria-labelledby="process-title">
+    <div class="section-shell">
+      <p class="eyebrow">How we work</p>
+      <h2 id="process-title" class="section-title">From workflow to working system</h2>
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {steps.map(([title, description], index) => (
+          <article class="surface-card h-full">
+            <p class="text-sm font-semibold text-purple-300">{index + 1}</p>
+            <h3 class="mt-2 text-lg font-semibold text-white">{title}</h3>
+            <p class="mt-3 leading-7 text-muted-foreground">{description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CallToAction title="Do you need a clearer way to manage information or deliver a service?" description="Tell us about the current process, who uses it and what needs to improve." buttonLabel="Discuss a Digital System" />
+</Layout>
