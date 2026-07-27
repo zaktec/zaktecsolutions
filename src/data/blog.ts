@@ -13,6 +13,8 @@ export interface BlogPost {
   publishedLabel: string;
   readTime: string;
   icon: 'ai' | 'systems' | 'website';
+  image: string;
+  imageAlt: string;
   introduction: string;
   sections: BlogSection[];
   conclusion: string;
@@ -28,6 +30,8 @@ export const blogPosts: BlogPost[] = [
     publishedLabel: '27 July 2026',
     readTime: '5 min read',
     icon: 'ai',
+    image: '/images/blog/ai-opportunities.webp',
+    imageAlt: 'A connected AI core linking organised workflow and information panels',
     introduction:
       'The best place to begin with AI is usually not a product demonstration. It is a clear, repeated problem that affects staff, customers or the quality of a service. Starting with the work makes it easier to judge whether AI is useful, what information it needs and how much oversight is required.',
     sections: [
@@ -77,6 +81,8 @@ export const blogPosts: BlogPost[] = [
     publishedLabel: '27 July 2026',
     readTime: '4 min read',
     icon: 'systems',
+    image: '/images/blog/digital-process.webp',
+    imageAlt: 'Separate digital forms and information flowing into one organised system',
     introduction:
       'Organisations often adapt to awkward processes because each individual step appears manageable. The real cost becomes visible when the whole journey is considered: repeated data entry, missing information, manual reminders and staff time spent checking what happened next.',
     sections: [
@@ -129,6 +135,8 @@ export const blogPosts: BlogPost[] = [
     publishedLabel: '27 July 2026',
     readTime: '5 min read',
     icon: 'website',
+    image: '/images/blog/useful-website.webp',
+    imageAlt: 'A responsive business website displayed across laptop, tablet and phone',
     introduction:
       'A professional website should do more than look polished. It should help the right visitor understand what the organisation offers, decide whether it is relevant and complete an appropriate next action with confidence.',
     sections: [

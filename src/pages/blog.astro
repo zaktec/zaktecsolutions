@@ -1,24 +1,55 @@
 ---
 import Layout from '../layouts/main.astro';
-import PageIntro from '../components/PageIntro.astro';
 import BlogCard from '../components/BlogCard.astro';
 import CallToAction from '../components/CallToAction.astro';
 import { blogPosts } from '../data/blog';
+
+const filters = [
+  ['all', 'All'],
+  ['ai', 'AI consultancy'],
+  ['systems', 'Digital systems'],
+  ['website', 'Websites'],
+];
 ---
 
 <Layout title="Blog | ZakTec Solutions" description="Practical guidance from ZakTec Solutions about AI, digital systems, business processes and useful websites.">
-  <PageIntro
-    eyebrow="Blog"
-    title="Practical ideas for better digital services"
-    description="Clear guidance about AI, digital processes and websites, written for organisations that want technology to solve real problems."
-  />
+  <section class="border-b border-white/10 bg-gradient-to-b from-purple-500/[0.09] to-transparent py-16 text-center md:py-24">
+    <div class="section-shell">
+      <p class="eyebrow">Insights and guidance</p>
+      <h1 class="text-4xl font-bold tracking-tight text-white md:text-6xl">
+        Our <span class="bg-gradient-to-r from-purple-300 to-fuchsia-400 bg-clip-text text-transparent">Blog</span>
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+        Practical ideas about AI, digital processes and websites for organisations that want technology to solve real problems.
+      </p>
+    </div>
+  </section>
 
   <section class="section-space" aria-labelledby="articles-title">
     <div class="section-shell">
       <h2 id="articles-title" class="sr-only">Latest articles</h2>
-      <div class="grid gap-6 lg:grid-cols-3">
-        {blogPosts.map((post) => <BlogCard {...post} />)}
+      <div class="mb-10 flex flex-wrap justify-center gap-3" aria-label="Filter articles by category">
+        {filters.map(([value, label], index) => (
+          <button
+            class="min-h-11 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-sm font-semibold text-slate-200 transition hover:border-purple-300/50 hover:bg-purple-500/10 hover:text-white aria-pressed:border-purple-400 aria-pressed:bg-purple-500/20 aria-pressed:text-purple-100"
+            type="button"
+            data-blog-filter={value}
+            aria-controls="article-list"
+            aria-pressed={index === 0 ? 'true' : 'false'}
+          >
+            {label}
+          </button>
+        ))}
       </div>
+
+      <div id="article-list" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {blogPosts.map((post) => (
+          <div class="h-full" data-blog-item={post.icon}>
+            <BlogCard {...post} />
+          </div>
+        ))}
+      </div>
+      <p id="filter-status" class="sr-only" role="status" aria-live="polite"></p>
     </div>
   </section>
 
@@ -27,3 +58,30 @@ import { blogPosts } from '../data/blog';
     description="Tell us about the process, system or website you want to improve, and we will suggest a practical next step."
   />
 </Layout>
+
+<script>
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('[data-blog-filter]');
+  const blogItems = document.querySelectorAll<HTMLElement>('[data-blog-item]');
+  const filterStatus = document.querySelector<HTMLElement>('#filter-status');
+
+  filterButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const selectedFilter = button.dataset.blogFilter ?? 'all';
+      let visibleCount = 0;
+
+      filterButtons.forEach((filterButton) => {
+        filterButton.setAttribute('aria-pressed', String(filterButton === button));
+      });
+
+      blogItems.forEach((item) => {
+        const isVisible = selectedFilter === 'all' || item.dataset.blogItem === selectedFilter;
+        item.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      if (filterStatus) {
+        filterStatus.textContent = `${visibleCount} ${visibleCount === 1 ? 'article' : 'articles'} shown.`;
+      }
+    });
+  });
+</script>

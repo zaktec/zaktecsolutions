@@ -7,16 +7,31 @@ interface Props {
   description: string;
   path: string;
   icon?: IconName;
+  iconTone?: 'purple' | 'blue' | 'fuchsia';
   linkLabel?: string;
   examples?: string[];
 }
 
-const { title, description, path, icon, linkLabel = 'Explore this service', examples = [] } = Astro.props;
+const {
+  title,
+  description,
+  path,
+  icon,
+  iconTone = 'purple',
+  linkLabel = 'Explore this service',
+  examples = [],
+} = Astro.props;
+
+const iconToneClasses = {
+  purple: 'border-purple-300/25 bg-purple-500/10 text-purple-300 group-hover:bg-purple-500/20',
+  blue: 'border-sky-300/25 bg-sky-500/10 text-sky-300 group-hover:bg-sky-500/20',
+  fuchsia: 'border-fuchsia-300/25 bg-fuchsia-500/10 text-fuchsia-300 group-hover:bg-fuchsia-500/20',
+};
 ---
 
-<article class="surface-card flex h-full flex-col p-5 md:p-6">
+<article class="surface-card group flex h-full flex-col p-5 transition duration-300 hover:-translate-y-1 hover:border-purple-300/25 hover:shadow-[0_18px_45px_rgba(0,0,0,0.22)] motion-reduce:hover:translate-y-0 md:p-6">
   {icon && (
-    <div class="icon-badge mb-5">
+    <div class:list={['mb-5 grid h-12 w-12 shrink-0 place-items-center rounded-xl border transition-colors duration-300', iconToneClasses[iconTone]]}>
       <Icon name={icon} />
     </div>
   )}

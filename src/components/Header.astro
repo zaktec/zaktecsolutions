@@ -3,19 +3,20 @@ import { withBase } from '../lib/utils';
 import Logo from './Logo.astro';
 
 const navigation = [
-  { label: 'Home', path: '/' },
-  { label: 'AI Consultancy', path: '/ai-solutions' },
-  { label: 'Digital Systems', path: '/digital-solutions' },
-  { label: 'Websites', path: '/web-development' },
+  { label: 'Services', path: '/services' },
   { label: 'Projects', path: '/projects' },
   { label: 'Blog', path: '/blog' },
   { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Contact', path: '/contact', primary: true },
 ];
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const currentPath = Astro.url.pathname.replace(base, '') || '/';
-const isCurrent = (path: string) => path === '/' ? currentPath === '/' : currentPath.startsWith(path);
+const servicePaths = ['/services', '/ai-solutions', '/digital-solutions', '/web-development', '/education-technology'];
+const isCurrent = (path: string) =>
+  path === '/services'
+    ? servicePaths.some((servicePath) => currentPath.startsWith(servicePath))
+    : currentPath.startsWith(path);
 ---
 
 <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b0d18]/95 backdrop-blur">
@@ -30,7 +31,12 @@ const isCurrent = (path: string) => path === '/' ? currentPath === '/' : current
           <li>
             <a
               href={withBase(item.path)}
-              class="inline-flex min-h-11 items-center rounded px-1 text-sm font-medium text-slate-300 transition hover:text-white"
+              class:list={[
+                'inline-flex min-h-11 items-center text-sm font-medium transition',
+                item.primary
+                  ? 'rounded-lg bg-purple-600 px-5 font-semibold text-white hover:bg-purple-500'
+                  : 'rounded px-1 text-slate-300 hover:text-white aria-[current=page]:text-purple-300',
+              ]}
               aria-current={isCurrent(item.path) ? 'page' : undefined}
             >
               {item.label}
@@ -50,7 +56,12 @@ const isCurrent = (path: string) => path === '/' ? currentPath === '/' : current
             <li>
               <a
                 href={withBase(item.path)}
-                class="flex min-h-11 items-center rounded-lg px-4 py-2 text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-white"
+                class:list={[
+                  'flex min-h-11 items-center rounded-lg px-4 py-2 text-sm font-medium',
+                item.primary
+                  ? 'mt-2 justify-center bg-purple-600 font-semibold text-white hover:bg-purple-500'
+                  : 'text-slate-200 hover:bg-white/10 hover:text-white aria-[current=page]:bg-white/10 aria-[current=page]:text-purple-200',
+                ]}
                 aria-current={isCurrent(item.path) ? 'page' : undefined}
               >
                 {item.label}

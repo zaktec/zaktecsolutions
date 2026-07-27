@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin);
-const favicon = `${import.meta.env.BASE_URL}favicon.svg`;
+const favicon = `${import.meta.env.BASE_URL}favicon.svg?v=2`;
 ---
 
 <!doctype html>

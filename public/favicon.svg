@@ -1,5 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="ZakTec Solutions ZT logo">
-  <rect x="2" y="2" width="44" height="44" rx="10" fill="#0b0d18" stroke="#a78bfa" stroke-width="3"/>
-  <path d="M10 13.5h21L15 34.5h23" fill="none" stroke="#a78bfa" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M28 13.5h11M34 13.5v21" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ZakTec Solutions Z logo">
+  <defs>
+    <linearGradient id="border" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c4b5fd"/>
+      <stop offset="1" stop-color="#c026d3"/>
+    </linearGradient>
+    <linearGradient id="mark" x1="18" y1="17" x2="47" y2="47" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#ddd6fe"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="58" height="58" rx="15" fill="#111525" stroke="url(#border)" stroke-width="4"/>
+  <path d="M17 18h30L19 46h28" fill="none" stroke="url(#mark)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="17" cy="18" r="3" fill="#a78bfa"/>
+  <circle cx="47" cy="46" r="3" fill="#d946ef"/>
 </svg>
