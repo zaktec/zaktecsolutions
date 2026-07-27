@@ -76,6 +76,10 @@
     @apply rounded-2xl border border-white/10 bg-white/[0.035] p-5 md:p-6;
   }
 
+  .icon-badge {
+    @apply grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-purple-300/20 bg-purple-500/10 text-purple-300;
+  }
+
   .button-primary {
     @apply inline-flex min-h-12 items-center justify-center rounded-lg bg-purple-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-purple-500;
   }

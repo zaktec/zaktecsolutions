@@ -1,0 +1,36 @@
+---
+import { withBase } from '../lib/utils';
+import Icon, { type IconName } from './Icon.astro';
+
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  publishedAt: string;
+  publishedLabel: string;
+  readTime: string;
+  icon: IconName;
+}
+
+const { slug, title, description, category, publishedAt, publishedLabel, readTime, icon } = Astro.props;
+---
+
+<article class="surface-card flex h-full flex-col">
+  <div class="icon-badge mb-5">
+    <Icon name={icon} />
+  </div>
+  <p class="text-xs font-semibold uppercase tracking-[0.16em] text-purple-300">{category}</p>
+  <h2 class="mt-3 text-2xl font-semibold leading-tight text-white">
+    <a class="transition hover:text-purple-200" href={withBase(`/blog/${slug}`)}>{title}</a>
+  </h2>
+  <p class="mt-4 leading-7 text-muted-foreground">{description}</p>
+  <div class="mt-auto flex flex-wrap items-center gap-x-3 gap-y-1 pt-6 text-sm text-slate-400">
+    <time datetime={publishedAt}>{publishedLabel}</time>
+    <span aria-hidden="true">·</span>
+    <span>{readTime}</span>
+  </div>
+  <a class="text-link mt-4 min-h-11" href={withBase(`/blog/${slug}`)}>
+    Read article <span aria-hidden="true">&nbsp;→</span>
+  </a>
+</article>

@@ -3,13 +3,14 @@ import Layout from '../layouts/main.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import CallToAction from '../components/CallToAction.astro';
+import Icon, { type IconName } from '../components/Icon.astro';
 import { withBase } from '../lib/utils';
 
-const problems = [
-  ['Repetitive Administration', 'Manual tasks can waste time and create unnecessary duplication.'],
-  ['Disconnected Information', 'Important information may be spread across emails, documents and different systems.'],
-  ['Slow Customer Enquiries', 'Unclear enquiry processes can create extra work for staff and frustration for customers.'],
-  ['Outdated Online Services', 'Websites and systems may no longer support the organisation effectively.'],
+const problems: [string, string, IconName][] = [
+  ['Repetitive Administration', 'Manual tasks can waste time and create unnecessary duplication.', 'repetitive'],
+  ['Disconnected Information', 'Important information may be spread across emails, documents and different systems.', 'information'],
+  ['Slow Customer Enquiries', 'Unclear enquiry processes can create extra work for staff and frustration for customers.', 'enquiry'],
+  ['Outdated Online Services', 'Websites and systems may no longer support the organisation effectively.', 'outdated'],
 ];
 
 const audiences = [
@@ -61,11 +62,11 @@ const projects = [
   },
 ];
 
-const steps = [
-  ['1. Understand', 'We learn about your organisation, users, current systems and challenges.'],
-  ['2. Assess and Plan', 'We identify suitable improvements and agree the scope, priorities and next steps.'],
-  ['3. Deliver', 'We build or configure the solution and test it with the people who will use it.'],
-  ['4. Support', 'We provide documentation, training and ongoing technical support where required.'],
+const steps: [string, string, IconName][] = [
+  ['1. Understand', 'We learn about your organisation, users, current systems and challenges.', 'understand'],
+  ['2. Assess and Plan', 'We identify suitable improvements and agree the scope, priorities and next steps.', 'plan'],
+  ['3. Deliver', 'We build or configure the solution and test it with the people who will use it.', 'deliver'],
+  ['4. Support', 'We provide documentation, training and ongoing technical support where required.', 'support'],
 ];
 
 const approachPoints = [
@@ -99,8 +100,11 @@ const approachPoints = [
       <h2 id="problems-title" class="section-title">Where could technology improve your organisation?</h2>
       <p class="section-copy">We help organisations reduce repetitive work, manage information more effectively and improve their online services.</p>
       <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-        {problems.map(([title, description]) => (
+        {problems.map(([title, description, icon]) => (
           <article class="surface-card h-full">
+            <div class="icon-badge mb-5">
+              <Icon name={icon} />
+            </div>
             <h3 class="text-lg font-semibold text-white">{title}</h3>
             <p class="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{description}</p>
           </article>
@@ -120,6 +124,7 @@ const approachPoints = [
           description="Use AI to reduce repetitive work, organise information and support staff more effectively."
           examples={['AI opportunity assessments', 'Workflow automation', 'Enquiry assistants', 'Internal knowledge tools', 'Staff AI guidance']}
           path="/ai-solutions"
+          icon="ai"
           linkLabel="Explore AI Consultancy"
         />
         <ServiceCard
@@ -127,6 +132,7 @@ const approachPoints = [
           description="Practical platforms and workflows designed to improve how your organisation manages information and delivers services."
           examples={['Dashboards', 'Digital forms', 'Booking systems', 'Client or member portals', 'Reporting tools']}
           path="/digital-solutions"
+          icon="systems"
           linkLabel="Explore Digital Systems"
         />
         <ServiceCard
@@ -134,6 +140,7 @@ const approachPoints = [
           description="Professional, responsive websites that explain your services clearly and help visitors take the next step."
           examples={['Business websites', 'Charity websites', 'Website redesigns', 'Enquiry forms', 'SEO and performance improvements']}
           path="/web-development"
+          icon="website"
           linkLabel="Explore Website Services"
         />
       </div>
@@ -179,8 +186,11 @@ const approachPoints = [
       <p class="eyebrow">How we work</p>
       <h2 id="process-title" class="section-title">A clear process from assessment to delivery</h2>
       <div class="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {steps.map(([title, description]) => (
+        {steps.map(([title, description, icon]) => (
           <article class="surface-card h-full p-5">
+            <div class="icon-badge mb-5">
+              <Icon name={icon} />
+            </div>
             <h3 class="text-lg font-semibold text-white">{title}</h3>
             <p class="mt-3 text-[0.95rem] leading-relaxed text-muted-foreground">{description}</p>
           </article>

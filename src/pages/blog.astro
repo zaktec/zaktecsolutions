@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/main.astro';
+import PageIntro from '../components/PageIntro.astro';
+import BlogCard from '../components/BlogCard.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { blogPosts } from '../data/blog';
+---
+
+<Layout title="Blog | ZakTec Solutions" description="Practical guidance from ZakTec Solutions about AI, digital systems, business processes and useful websites.">
+  <PageIntro
+    eyebrow="Blog"
+    title="Practical ideas for better digital services"
+    description="Clear guidance about AI, digital processes and websites, written for organisations that want technology to solve real problems."
+  />
+
+  <section class="section-space" aria-labelledby="articles-title">
+    <div class="section-shell">
+      <h2 id="articles-title" class="sr-only">Latest articles</h2>
+      <div class="grid gap-6 lg:grid-cols-3">
+        {blogPosts.map((post) => <BlogCard {...post} />)}
+      </div>
+    </div>
+  </section>
+
+  <CallToAction
+    title="Would you like help applying these ideas?"
+    description="Tell us about the process, system or website you want to improve, and we will suggest a practical next step."
+  />
+</Layout>

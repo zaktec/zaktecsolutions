@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/main.astro';
+import CallToAction from '../../components/CallToAction.astro';
+import { blogPosts, type BlogPost } from '../../data/blog';
+import { withBase } from '../../lib/utils';
+
+export function getStaticPaths() {
+  return blogPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: BlogPost;
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={`${post.title} | ZakTec Solutions`} description={post.description}>
+  <article>
+    <header class="border-b border-white/10 bg-gradient-to-b from-purple-500/[0.09] to-transparent py-16 md:py-24">
+      <div class="section-shell max-w-4xl">
+        <a class="text-link min-h-11" href={withBase('/blog')}>← Back to Blog</a>
+        <p class="eyebrow mt-8">{post.category}</p>
+        <h1 class="text-4xl font-bold leading-tight tracking-tight text-white md:text-6xl">{post.title}</h1>
+        <p class="mt-6 max-w-3xl text-lg leading-8 text-slate-300 md:text-xl">{post.description}</p>
+        <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-400">
+          <time datetime={post.publishedAt}>{post.publishedLabel}</time>
+          <span aria-hidden="true">·</span>
+          <span>{post.readTime}</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="section-shell py-14 md:py-20">
+      <div class="content-page mx-auto">
+        <p class="text-lg leading-8 text-slate-300">{post.introduction}</p>
+
+        {post.sections.map((section) => (
+          <section>
+            <h2>{section.heading}</h2>
+            {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+            {section.points && (
+              <ul>
+                {section.points.map((point) => <li>{point}</li>)}
+              </ul>
+            )}
+          </section>
+        ))}
+
+        <div class="mt-12 rounded-2xl border border-purple-300/20 bg-purple-500/10 p-6 text-slate-200">
+          <p class="mt-0">{post.conclusion}</p>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <CallToAction
+    title="Do you have a similar challenge?"
+    description="Tell us what you want to improve and we will help you identify an appropriate next step."
+  />
+</Layout>
